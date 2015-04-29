@@ -30,6 +30,18 @@ if (!ne.component) {
          */
         minDist: 10,
         /**
+         * click count for discriminating double click
+         */
+        clickCount: 0,
+        /**
+         * click timer for check double click
+         */
+        clickTimer: null,
+        /**
+         * extracted event type
+         */
+        type: null,
+        /**
          * set options
          * @param option
          */
@@ -48,11 +60,11 @@ if (!ne.component) {
          * @return {object}
          */
         figure: function(eventData) {
-            var type = this.getType(eventData),
-                direction = this.getDirection(eventData.list);
+            var direction = this.getDirection(eventData.list);
+            this.extractType(eventData);
             return {
                 direction : direction,
-                type: type
+                type: this.type
             }
         },
         /**
@@ -149,7 +161,7 @@ if (!ne.component) {
          * @param {object} eventData event data
          * @returns {string}
          * @example
-         * discriminator.getType({
+         * discriminator.extractType({
          *      start: 1000,
          *      end: 1100,
          *      list: [
@@ -164,7 +176,7 @@ if (!ne.component) {
          *      ]
          * });
          */
-        getType: function(eventData) {
+        extractType: function(eventData) {
             var start = eventData.start,
                 end = eventData.end,
                 list = eventData.list,
@@ -176,19 +188,41 @@ if (!ne.component) {
 
             // compare dist with minDist
             if (xDist < this.minDist && yDist < this.minDist) {
-                if (timeDist < this.clickTime) {
-                    return 'click';
-                } else {
-                    return 'none';
-                }
+                this.checkClick(timeDist);
+                return;
             }
 
             // speed check and dist with flickRange
             if (timeDist < this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
-                return 'flick';
+                this.type = 'flick';
+                return;
             }
 
-            return 'none';
+            this.type = 'none';
+        },
+        /**
+         * check click event or double click
+         * @param timeDist
+         * @returns {*}
+         */
+        checkClick: function(timeDist) {
+            var self = this;
+            if (timeDist < this.clickTime) {
+                if (this.clickCount) {
+                    this.clickCount = 0;
+                    window.clearTimeout(this.clickTimer);
+                    this.type = 'dbclick';
+                } else {
+                    this.clickCount++;
+                    this.clickTimer = window.setTimeout(function() {
+                        self.type = 'click';
+                        self.clickCount = 0;
+                        window.clearTimeout(this.clickTimer);
+                    }, this.clickTime);
+                }
+            } else {
+                this.type = 'none';
+            }
         }
 
     });

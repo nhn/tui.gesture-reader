@@ -1,11 +1,12 @@
 Touch Detector
 ===============
-모바일웹에서 터치 이벤트를 추적하는 모듈.
+Figure out event type and direction. by event data.
 
 ## Feature
-* 사용자의 터치 start/move/end 이벤트를 감지
-* 감지한 이벤트를 판별하여 종류/방향/발생시간들을 정리
-   * 클릭
+* 터치이벤트 좌표들을 통해 이동방향을 추적한다.
+* 넘겨받은 이벤트데이터로 이벤트의 종류를 추적한다.
+   * click
+   * dbclick
    * flick
 
 ## Sample Image

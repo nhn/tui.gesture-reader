@@ -101,27 +101,45 @@ describe('Test discriminator by touch event information.', function() {
 
 
     describe('test event type', function() {
-        it('none event uprise.', function() {
-            var result = discriminator.getType(event);
-            expect(result).toBe('flick');
+        it('flick event uprise.', function() {
+            discriminator.extractType(event);
+            expect(discriminator.type).toBe('flick');
         });
 
         it('flick event uprise.', function() {
             event.start = 1000;
             event.end = 1005;
-            var result = discriminator.getType(event);
-            expect(result).toBe('flick');
+            discriminator.extractType(event);
+            expect(discriminator.type).toBe('flick');
         });
 
-        it('click event uprise.', function() {
+        it('click event uprise.', function(done) {
             event.start = 1000;
             event.end = 1100;
             event.list.push({
                 x: 11,
                 y: 5
             });
-            var result = discriminator.getType(event);
-            expect(result).toBe('click');
+            discriminator.extractType(event);
+            setTimeout(function() {
+                expect(discriminator.type).toBe('click');
+                done();
+            }, 1000);
+        });
+
+        it('double click event uprise.', function(done) {
+            event.start = 1000;
+            event.end = 1100;
+            event.list.push({
+                x: 11,
+                y: 5
+            });
+            discriminator.extractType(event);
+            discriminator.extractType(event);
+            setTimeout(function() {
+                expect(discriminator.type).toBe('dbclick');
+                done();
+            }, 1000);
         });
 
         it('ignore event(return none)', function() {
@@ -131,8 +149,8 @@ describe('Test discriminator by touch event information.', function() {
                 x: 11,
                 y: 5
             });
-            var result = discriminator.getType(event);
-            expect(result).toBe('none');
+            discriminator.extractType(event);
+            expect(discriminator.type).toBe('none');
         });
 
         it('ignore event(return none)', function() {
@@ -142,8 +160,8 @@ describe('Test discriminator by touch event information.', function() {
                 x: 100,
                 y: 100
             });
-            var result = discriminator.getType(event);
-            expect(result).toBe('none');
+            discriminator.extractType(event);
+            expect(discriminator.type).toBe('none');
         });
     });
 
