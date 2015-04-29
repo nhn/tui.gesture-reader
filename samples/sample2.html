@@ -71,12 +71,14 @@
             }]
         });
 
-        if (result.type) {
-            type.getElementsByTagName('em')[0].innerHTML = result.type;
-        }
-        if (result.direction) {
-            direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
-        }
+        setTimeout(function() {
+            if (result.type) {
+                type.getElementsByTagName('em')[0].innerHTML = result.type;
+            }
+            if (result.direction) {
+                direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
+            }
+        }, 300);
     };
 </script>
 </body>

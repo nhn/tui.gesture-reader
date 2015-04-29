@@ -69,12 +69,14 @@
             }]
         });
 
-        if (result.type) {
-            type.getElementsByTagName('em')[0].innerHTML = result.type;
-        }
-        if (result.direction) {
-            direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
-        }
+        setTimeout(function() {
+            if (result.direction) {
+                direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
+            }
+            if (result.type) {
+                type.getElementsByTagName('em')[0].innerHTML = result.type;
+            }
+        }, 300);
     }, false);
 
 </script>

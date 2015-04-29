@@ -30,10 +30,6 @@ if (!ne.component) {
          */
         minDist: 10,
         /**
-         * click count for discriminating double click
-         */
-        clickCount: 0,
-        /**
          * click timer for check double click
          */
         clickTimer: null,
@@ -157,7 +153,7 @@ if (!ne.component) {
             return dupl;
         },
         /**
-         * return type of event
+         * extract type of event
          * @param {object} eventData event data
          * @returns {string}
          * @example
@@ -201,31 +197,33 @@ if (!ne.component) {
             this.type = 'none';
         },
         /**
-         * check click event or double click
-         * @param timeDist
+         * check click or double click
+         * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
          * @returns {*}
          */
         checkClick: function(timeDist) {
             var self = this;
             if (timeDist < this.clickTime) {
-                console.log(this.clickCount)
-                if (this.clickCount) {
-                    this.clickCount = 0;
-                    window.clearTimeout(this.clickTimer);
+                if (this.clickTimer) {
+                    this.resetTimer();
                     this.type = 'dbclick';
                 } else {
-                    this.clickCount = 1;
-                    this.clickTimer = window.setTimeout(function() {
-                        self.type = 'click';
-                        self.clickCount = 0;
-                        window.clearTimeout(self.clickTimer);
+                    this.type = 'click';
+                    this.clickTimer = window.setTimeout(function () {
+                        self.resetTimer();
                     }, this.clickTime);
                 }
             } else {
                 this.type = 'none';
             }
+        },
+        /**
+         * clear clickTimer
+         */
+        resetTimer: function() {
+            window.clearTimeout(this.clickTimer);
+            this.clickTimer = null;
         }
-
     });
 
 })(ne.component);
