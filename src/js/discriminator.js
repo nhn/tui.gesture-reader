@@ -208,16 +208,17 @@ if (!ne.component) {
         checkClick: function(timeDist) {
             var self = this;
             if (timeDist < this.clickTime) {
+                console.log(this.clickCount)
                 if (this.clickCount) {
                     this.clickCount = 0;
                     window.clearTimeout(this.clickTimer);
                     this.type = 'dbclick';
                 } else {
-                    this.clickCount++;
+                    this.clickCount = 1;
                     this.clickTimer = window.setTimeout(function() {
                         self.type = 'click';
                         self.clickCount = 0;
-                        window.clearTimeout(this.clickTimer);
+                        window.clearTimeout(self.clickTimer);
                     }, this.clickTime);
                 }
             } else {
