@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title></title>
-    <script type="text/javascript" src="../lib/code-snippet/code-snippet.js"></script>
-    <script type="text/javascript" src="../src/js/discriminator.js"></script>
+    <script type="text/javascript" src="lib/code-snippet.js"></script>
+    <script type="text/javascript" src="src/js/discriminator.js"></script>
     <style type="text/css">
         #detect {
-            width:300px; height:600px; background-color:hotpink;
+            width:500px; height:600px; background-color:hotpink;
         }
-        .box {position:absolute; left: 320px; top:10px; background-color:lightpink; width:150px; height:150px;
+        .box {position:absolute; left: 520px; top:10px; background-color:lightpink; width:150px; height:150px;
             font-family: consolas, monaco, monospace;
             font-size: 12px; }
         .box span {display:block;}
@@ -26,60 +26,54 @@
     <span id="direction">Direction : <em></em></span>
     <span id="type">Type : <em></em></span>
 </div>
-<script type="text/javascript">
-    var DIRECTION = {
-        W: 'WEST',
-        N: 'NORTH',
-        S: 'SOUTH',
-        E: 'EAST'
-    };
+    <script type="text/javascript">
+        var DIRECTION = {
+            W: 'WEST',
+            N: 'NORTH',
+            S: 'SOUTH',
+            E: 'EAST'
+        };
 
-    var info = {},
+        var info = {},
             detect = document.getElementById('detect'),
             direction = document.getElementById('direction'),
             type = document.getElementById('type'),
             discriminator = new ne.component.Discriminator({
-                flickRange: 100
+                flickRange: 100,
+                flickTime: 600
             });
 
-    var info = {},
-            detect = document.getElementById('detect'),
-            direction = document.getElementById('direction'),
-            type = document.getElementById('type'),
-            discriminator = new ne.component.Discriminator({
-                flickRange: 100
+        detect.onmousedown = function(e) {
+            e = e || window.event;
+            info.x = e.pageX;
+            info.y = e.pageY;
+            info.start = new Date();
+        };
+        detect.onmouseup = function(e) {
+            e = e || window.event;
+            info.end = new Date();
+
+            var result = discriminator.figure({
+                start: info.start,
+                end: info.end,
+                list : [{
+                    x: info.x,
+                    y: info.y
+                }, {
+                    x: e.pageX,
+                    y: e.pageY
+                }]
             });
-    detect.onmousedown = function(e) {
-        e = e || window.event;
-        info.x = e.pageX;
-        info.y = e.pageY;
-        info.start = new Date();
-    };
-    detect.onmouseup = function(e) {
-        e = e || window.event;
-        info.end = new Date();
 
-        var result = discriminator.figure({
-            start: info.start,
-            end: info.end,
-            list : [{
-                x: info.x,
-                y: info.y
-            }, {
-                x: e.pageX,
-                y: e.pageY
-            }]
-        });
-
-        setTimeout(function() {
-            if (result.type) {
-                type.getElementsByTagName('em')[0].innerHTML = result.type;
-            }
-            if (result.direction) {
-                direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
-            }
-        }, 300);
-    };
-</script>
+            setTimeout(function() {
+                if (result.type) {
+                    type.getElementsByTagName('em')[0].innerHTML = result.type;
+                }
+                if (result.direction) {
+                    direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
+                }
+            }, 300);
+        };
+    </script>
 </body>
 </html>
