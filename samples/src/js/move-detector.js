@@ -10,16 +10,16 @@ if (!ne.component) {
 
     /**
      * To find out it's flick or click or nothing from event datas.
-     * @namespace ne.component.Discriminator
+     * @namespace ne.component.MoveDetector
      * @example
-     * var discriminator = new ne.component.Discriminator({
+     * var movedetector = new ne.component.MoveDetector({
      *      flickTime: 300, // time to check flick
      *      flickRange: 250, // range(distance) to check flick
      *      clickTime: 200, // time to check click
      *      minDist: 15 // range(distance) to check movement
      * });
      */
-    exports.Discriminator = ne.util.defineClass(/** @lends ne.component.Discriminator.prototype */{
+    exports.MoveDetector = ne.util.defineClass(/** @lends ne.component.MoveDetector.prototype */{
         /**
          * time is considered flick.
          */
@@ -165,7 +165,7 @@ if (!ne.component) {
          * @param {object} eventData event data
          * @returns {string}
          * @example
-         * discriminator.extractType({
+         * movedetector.extractType({
          *      start: 1000,
          *      end: 1100,
          *      list: [

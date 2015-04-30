@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/js/discriminator.js",
+      "src/js/MoveDetector.js",
       "README.md"
     ],
     "exclude": [],

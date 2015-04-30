@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title></title>
     <script type="text/javascript" src="lib/code-snippet.js"></script>
-    <script type="text/javascript" src="src/js/discriminator.js"></script>
+    <script type="text/javascript" src="src/js/move-detector.js"></script>
     <style type="text/css">
         #detect {
             width:500px; height:600px; background-color:hotpink;
@@ -38,7 +38,7 @@
         detect = document.getElementById('detect'),
         direction = document.getElementById('direction'),
         type = document.getElementById('type'),
-        discriminator = new ne.component.Discriminator({
+        movedetector = new ne.component.MoveDetector({
             flickRange: 100
         });
 
@@ -57,7 +57,7 @@
         e = e || window.event;
         info.end = new Date();
 
-        var result = discriminator.figure({
+        var result = movedetector.figure({
             start: info.start,
             end: info.end,
             list : [{

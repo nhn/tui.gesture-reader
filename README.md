@@ -1,4 +1,4 @@
-Touch Detector
+Move Detector
 ===============
 Figure out event type and direction. by event data.
 
@@ -9,9 +9,6 @@ Figure out event type and direction. by event data.
    * dbclick
    * flick
 
-## Sample Image
-
-
 ## Documentation
 
 
@@ -19,6 +16,7 @@ Figure out event type and direction. by event data.
 * code-snippet : https://github.nhnent.com/fe/code-snippet
 
 ## Test environment
+
 
 ## Download/Install
 

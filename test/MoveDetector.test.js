@@ -1,11 +1,11 @@
-describe('Test discriminator by touch event information.', function() {
-    var discriminator;
+describe('Test MoveDetector by touch event information.', function() {
+    var movedetector;
     var pointList,
         event,
         i;
 
     beforeEach(function() {
-        discriminator = new ne.component.Discriminator({});
+        movedetector = new ne.component.MoveDetector({});
         // event mock (10, 0) -> (408, 199)
         pointList = [],
         event = {},
@@ -18,8 +18,8 @@ describe('Test discriminator by touch event information.', function() {
         event.list = pointList;
     });
 
-    it('discriminator is defined', function() {
-        expect(discriminator).toBeDefined();
+    it('movedetector is defined', function() {
+        expect(movedetector).toBeDefined();
     });
 
     describe('test cardinal Points', function() {
@@ -27,7 +27,7 @@ describe('Test discriminator by touch event information.', function() {
             var first = { x: 10, y: 10 },
                 final = { x: 60, y: 30 },
                 cardinalPoints;
-            cardinalPoints = discriminator.getCardinalPoints(first, final);
+            cardinalPoints = movedetector.getCardinalPoints(first, final);
             expect(cardinalPoints).toBe('SE');
         });
 
@@ -35,7 +35,7 @@ describe('Test discriminator by touch event information.', function() {
             var first = { x: 60, y: 100 },
                 final = { x: 10, y: 30 },
                 cardinalPoints;
-            cardinalPoints = discriminator.getCardinalPoints(first, final);
+            cardinalPoints = movedetector.getCardinalPoints(first, final);
             expect(cardinalPoints).toBe('NW');
         });
 
@@ -43,7 +43,7 @@ describe('Test discriminator by touch event information.', function() {
             var first = { x: 60, y: 100 },
                 final = { x: 60, y: 30 },
                 cardinalPoints;
-            cardinalPoints = discriminator.getCardinalPoints(first, final);
+            cardinalPoints = movedetector.getCardinalPoints(first, final);
             expect(cardinalPoints).toBe('N');
         });
 
@@ -51,14 +51,14 @@ describe('Test discriminator by touch event information.', function() {
             var first = { x: 30, y: 100 },
                 final = { x: 100, y: 100 },
                 cardinalPoints;
-            cardinalPoints = discriminator.getCardinalPoints(first, final);
+            cardinalPoints = movedetector.getCardinalPoints(first, final);
             expect(cardinalPoints).toBe('E');
         });
 
         it('get duplicated charaters, between strings', function() {
             var str1 = 'asdf',
                 str2 = 'kbga',
-                dupl = discriminator.getDuplicate(str1, str2);
+                dupl = movedetector.getDuplicate(str1, str2);
 
             expect(dupl).toBe('a');
         });
@@ -66,8 +66,8 @@ describe('Test discriminator by touch event information.', function() {
         it('figure out nearest four points(W,E,S,N)', function() {
             var first = { x: 30, y: 100 },
                 final = { x: 100, y : 250 },
-                cardinalPoint = discriminator.getCardinalPoints(first, final),
-                nearestPoint = discriminator.getNearestPoint(first, final, cardinalPoint);
+                cardinalPoint = movedetector.getCardinalPoints(first, final),
+                nearestPoint = movedetector.getNearestPoint(first, final, cardinalPoint);
 
             expect(nearestPoint).toBe('S');
 
@@ -76,8 +76,8 @@ describe('Test discriminator by touch event information.', function() {
         it('figure out nearest four points(W,E,S,N)', function() {
             var first = { x: 250, y: 0 },
                 final = { x: 10, y : 150 },
-                cardinalPoint = discriminator.getCardinalPoints(first, final),
-                nearestPoint = discriminator.getNearestPoint(first, final, cardinalPoint);
+                cardinalPoint = movedetector.getCardinalPoints(first, final),
+                nearestPoint = movedetector.getNearestPoint(first, final, cardinalPoint);
 
             expect(nearestPoint).toBe('W');
 
@@ -86,15 +86,15 @@ describe('Test discriminator by touch event information.', function() {
         it('figure out nearest four points(W,E,S,N)', function() {
             var first = { x: 10, y: 250 },
                 final = { x: 100, y : 100 },
-                cardinalPoint = discriminator.getCardinalPoints(first, final),
-                nearestPoint = discriminator.getNearestPoint(first, final, cardinalPoint);
+                cardinalPoint = movedetector.getCardinalPoints(first, final),
+                nearestPoint = movedetector.getNearestPoint(first, final, cardinalPoint);
 
             expect(nearestPoint).toBe('N');
 
         });
 
         it('figure out nearest four point(W,E,S,N), use get direction.', function() {
-            var result = discriminator.getDirection(pointList);
+            var result = movedetector.getDirection(pointList);
             expect(result).toBe('E');
         });
     });
@@ -102,15 +102,15 @@ describe('Test discriminator by touch event information.', function() {
 
     describe('test event type', function() {
         it('flick event uprise.', function() {
-            discriminator.extractType(event);
-            expect(discriminator.type).toBe('flick');
+            movedetector.extractType(event);
+            expect(movedetector.type).toBe('flick');
         });
 
         it('flick event uprise.', function() {
             event.start = 1000;
             event.end = 1005;
-            discriminator.extractType(event);
-            expect(discriminator.type).toBe('flick');
+            movedetector.extractType(event);
+            expect(movedetector.type).toBe('flick');
         });
 
         it('click event uprise.', function(done) {
@@ -120,9 +120,9 @@ describe('Test discriminator by touch event information.', function() {
                 x: 11,
                 y: 5
             });
-            discriminator.extractType(event);
+            movedetector.extractType(event);
             setTimeout(function() {
-                expect(discriminator.type).toBe('click');
+                expect(movedetector.type).toBe('click');
                 done();
             }, 1000);
         });
@@ -134,10 +134,10 @@ describe('Test discriminator by touch event information.', function() {
                 x: 11,
                 y: 5
             });
-            discriminator.extractType(event);
-            discriminator.extractType(event);
+            movedetector.extractType(event);
+            movedetector.extractType(event);
             setTimeout(function() {
-                expect(discriminator.type).toBe('dbclick');
+                expect(movedetector.type).toBe('dbclick');
                 done();
             }, 1000);
         });
@@ -149,8 +149,8 @@ describe('Test discriminator by touch event information.', function() {
                 x: 11,
                 y: 5
             });
-            discriminator.extractType(event);
-            expect(discriminator.type).toBe('none');
+            movedetector.extractType(event);
+            expect(movedetector.type).toBe('none');
         });
 
         it('ignore event(return none)', function() {
@@ -160,13 +160,13 @@ describe('Test discriminator by touch event information.', function() {
                 x: 100,
                 y: 100
             });
-            discriminator.extractType(event);
-            expect(discriminator.type).toBe('none');
+            movedetector.extractType(event);
+            expect(movedetector.type).toBe('none');
         });
     });
 
     it('get Event type and direction', function() {
-        var result = discriminator.figure(event);
+        var result = movedetector.figure(event);
         expect(result.direction).toBe('E');
         expect(result.type).toBe('flick');
     });
