@@ -16,7 +16,13 @@ Figure out event type and direction. by event data.
 * code-snippet : https://github.nhnent.com/fe/code-snippet
 
 ## Test environment
-
+- PC
+   * IE7~11
+   * Chrome
+   * Firefox
+- Mobile
+   * iOS8
+   * Chrome Emulator
 
 ## Download/Install
 
