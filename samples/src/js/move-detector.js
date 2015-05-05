@@ -192,7 +192,7 @@ if (!ne.component) {
 
             // compare dist with minDist
             if (xDist < this.minDist && yDist < this.minDist) {
-                this.checkClick(timeDist);
+                this._detectClickType(timeDist);
                 return;
             }
 
@@ -209,7 +209,7 @@ if (!ne.component) {
          * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
          * @returns {*}
          */
-        checkClick: function(timeDist) {
+        _detectClickType: function(timeDist) {
             var self = this;
             if (timeDist < this.clickTime) {
                 if (this.clickTimer) {

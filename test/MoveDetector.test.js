@@ -58,7 +58,7 @@ describe('Test MoveDetector by touch event information.', function() {
         it('get duplicated charaters, between strings', function() {
             var str1 = 'asdf',
                 str2 = 'kbga',
-                dupl = movedetector.getDuplicate(str1, str2);
+                dupl = movedetector._getDuplicatedString(str1, str2);
 
             expect(dupl).toBe('a');
         });

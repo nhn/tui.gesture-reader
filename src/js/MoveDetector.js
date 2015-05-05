@@ -125,7 +125,7 @@ if (!ne.component) {
                 direction = slop > 1 ? 'NS' : 'WE';
             }
 
-            direction = this.getDuplicate(direction, cardinalPoint);
+            direction = this._getDuplicatedString(direction, cardinalPoint);
             return direction;
         },
         /**
@@ -134,14 +134,14 @@ if (!ne.component) {
          * @param {string} str2 compared charters
          * @returns {string}
          */
-        getDuplicate: function(str1, str2) {
+        _getDuplicatedString: function(str1, str2) {
             var dupl,
                 key,
                 i = 0,
                 len = str1.length,
                 pool = {};
 
-            // save opered charaters
+            // save opered characters
             for (; i < len; i++) {
                 key = str1.charAt(i);
                 pool[key] = 1;
@@ -192,24 +192,19 @@ if (!ne.component) {
 
             // compare dist with minDist
             if (xDist < this.minDist && yDist < this.minDist) {
-                this.checkClick(timeDist);
-                return;
-            }
-
-            // speed check and dist with flickRange
-            if (timeDist < this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
+                this._detectClickType(timeDist);
+            } else if (timeDist < this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
                 this.type = 'flick';
-                return;
+            } else {
+                this.type = 'none';
             }
-
-            this.type = 'none';
         },
         /**
          * check click or double click
          * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
          * @returns {*}
          */
-        checkClick: function(timeDist) {
+        _detectClickType: function(timeDist) {
             var self = this;
             if (timeDist < this.clickTime) {
                 if (this.clickTimer) {
