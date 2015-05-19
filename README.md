@@ -12,7 +12,9 @@ Figure out event type and direction. by event data.
    * flick
 
 ## Documentation
-
+* API : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0/
+* CI : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
+* Tutorial : 준비중
 
 ## Dependency
 * code-snippet : https://github.nhnent.com/fe/code-snippet
@@ -27,6 +29,12 @@ Figure out event type and direction. by event data.
    * Chrome Emulator
 
 ## Download/Install
-
+* Bower:
+   * 최신버전 : `bower install "git+http://70327b4564c7a80eb61724056876b960290946dd:x-oauth-basic@github.nhnent.com/fe/component-gesture-flick.git#master"`
+   * 특정버전 : `bower install "git+http://70327b4564c7a80eb61724056876b960290946dd:x-oauth-basic@github.nhnent.com/fe/component-gesture-flick.git[#tag]"`
+* Download: https://github.nhnent.com/fe/component-gesture-flick
 
 ## History
+| Version | Description | Date | Developer |
+| ---- | ---- | ---- | ---- |
+| <a href="https://github.nhnent.com/pages/fe/component-effect-slide/1.0.0/">1.0.0</a> | 최초개발 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |
