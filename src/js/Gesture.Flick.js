@@ -199,7 +199,7 @@ Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.protot
     /**
      * check click or double click
      * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
-     * @priavte
+     * @private
      * @returns {*}
      */
     _detectClickType: function(timeDist) {
