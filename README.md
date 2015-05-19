@@ -1,27 +1,40 @@
-Touch Detector
+Gesture Flick
 ===============
-모바일웹에서 터치 이벤트를 추적하는 모듈.
+Figure out event type and direction. by event data.
 
 ## Feature
-* 사용자의 터치 start/move/end 이벤트를 감지
-* 감지한 이벤트를 판별하여 종류/방향/발생시간들을 정리
-   * 클릭
-   * 더블클릭
-   * drag
+* 터치이벤트 좌표들을 통해 이동방향을 추적한다.
+   * N/E/S/W
+   * NE/ES/SW/WN
+* 넘겨받은 이벤트데이터로 이벤트의 종류를 추적한다.
+   * click
+   * dbclick
    * flick
 
-## Sample Image
-
-
 ## Documentation
-
+* API : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0/
+* CI : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
+* Tutorial : 준비중
 
 ## Dependency
 * code-snippet : https://github.nhnent.com/fe/code-snippet
 
 ## Test environment
+- PC
+   * IE7~11
+   * Chrome
+   * Firefox
+- Mobile
+   * iOS8
+   * Chrome Emulator
 
 ## Download/Install
-
+* Bower:
+   * 최신버전 : `bower install "git+http://70327b4564c7a80eb61724056876b960290946dd:x-oauth-basic@github.nhnent.com/fe/component-gesture-flick.git#master"`
+   * 특정버전 : `bower install "git+http://70327b4564c7a80eb61724056876b960290946dd:x-oauth-basic@github.nhnent.com/fe/component-gesture-flick.git[#tag]"`
+* Download: https://github.nhnent.com/fe/component-gesture-flick
 
 ## History
+| Version | Description | Date | Developer |
+| ---- | ---- | ---- | ---- |
+| <a href="https://github.nhnent.com/pages/fe/component-effect-slide/1.0.0/">1.0.0</a> | 최초개발 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |

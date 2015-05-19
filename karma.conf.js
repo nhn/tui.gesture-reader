@@ -9,13 +9,18 @@ module.exports = function(config) {
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         // karma runner 의 웹 서버 root를 변경할 수 있음
-        basePath: '',
+        basePath: './',
 
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
 
+        reporters: [
+            'dots',
+            'coverage',
+            'junit'
+        ],
 
         /*
          karma runner 의 웹 서버에 포함될 파일들을 적어주세요.
@@ -53,15 +58,25 @@ module.exports = function(config) {
         },
 
 
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
-
         coverageReporter: {
-            type: 'html',
-            dir: 'report/'
+            dir : 'report/coverage/',
+            reporters: [
+                {
+                    type: 'html',
+                    subdir: function(browser) {
+                        return 'report-html/' + browser;
+                    }
+                },
+                {
+                    type: 'cobertura',
+                    subdir: function(browser) {
+                        return 'report-cobertura/' + browser;
+                    },
+                    file: 'cobertura.txt'
+                }
+            ]
         },
+
 
         junitReporter: {
             outputFile: 'report/junit-result.xml',

@@ -1,5 +1,5 @@
 {
-  "name": "component-m-touch-detector",
+  "name": "component-gesture-flick",
   "version": "1.0.0",
   "description": "type of mobile touch event detector",
   "private": true,
