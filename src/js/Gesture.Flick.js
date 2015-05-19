@@ -128,6 +128,7 @@ Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.protot
      * return duplicate charters
      * @param {string} str1 compared charters
      * @param {string} str2 compared charters
+     * @private
      * @returns {string}
      */
     _getDuplicatedString: function(str1, str2) {
@@ -198,6 +199,7 @@ Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.protot
     /**
      * check click or double click
      * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
+     * @priavte
      * @returns {*}
      */
     _detectClickType: function(timeDist) {
