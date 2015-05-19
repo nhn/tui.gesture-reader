@@ -16,6 +16,11 @@ module.exports = function(config) {
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
 
+        reporters: [
+            'dots',
+            'coverage',
+            'junit'
+        ],
 
         /*
          karma runner 의 웹 서버에 포함될 파일들을 적어주세요.
