@@ -59,9 +59,24 @@ module.exports = function(config) {
         reporters: ['progress', 'coverage'],
 
         coverageReporter: {
-            type: 'html',
-            dir: 'report/'
+            dir : 'report/coverage/',
+            reporters: [
+                {
+                    type: 'html',
+                    subdir: function(browser) {
+                        return 'report-html/' + browser;
+                    }
+                },
+                {
+                    type: 'cobertura',
+                    subdir: function(browser) {
+                        return 'report-cobertura/' + browser;
+                    },
+                    file: 'cobertura.txt'
+                }
+            ]
         },
+
 
         junitReporter: {
             outputFile: 'report/junit-result.xml',
