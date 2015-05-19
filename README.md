@@ -1,4 +1,4 @@
-Move Detector
+Gesture Flick
 ===============
 Figure out event type and direction. by event data.
 
