@@ -14,7 +14,7 @@ Figure out event type and direction. by event data.
 ## Documentation
 * API : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0/
 * CI : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
-* Tutorial : 준비중
+* Tutorial : https://github.nhnent.com/fe/component-gesture-flick/wiki/제스쳐-플릭-컴포넌트-적용방법
 
 ## Dependency
 * code-snippet : https://github.nhnent.com/fe/code-snippet
