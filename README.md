@@ -20,12 +20,14 @@ Figure out event type and direction. by event data.
 * code-snippet : https://github.nhnent.com/fe/code-snippet
 
 ## Test environment
-- PC
+* PC
    * IE7~11
    * Chrome
    * Firefox
-- Mobile
-   * iOS8
+* Mobile
+   * Galaxy Note I(Android 2.3), II(Android 4.1)
+   * Galaxy S III(Android 4.0), IV(Android 4.2.2)
+   * iPhone 5S(iOS 8)
    * Chrome Emulator
 
 ## Download/Install
