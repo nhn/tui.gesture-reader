@@ -37,4 +37,4 @@ Figure out event type and direction. by event data.
 ## History
 | Version | Description | Date | Developer |
 | ---- | ---- | ---- | ---- |
-| <a href="https://github.nhnent.com/pages/fe/component-effect-slide/1.0.0/">1.0.0</a> | 최초개발 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0/">1.0.0</a> | 최초개발 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |
