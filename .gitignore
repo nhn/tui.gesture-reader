@@ -52,3 +52,14 @@ doc
 demo
 report
 dist
+
+*.json
+*.js
+samples
+node_modules
+report
+src
+test
+*.map
+*.md
+.bowerrc
