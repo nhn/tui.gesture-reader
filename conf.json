@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/js/MoveDetector.js",
+      "src/js/Gesture.Flick.js",
       "README.md"
     ],
     "exclude": [],
