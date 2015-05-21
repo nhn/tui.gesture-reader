@@ -52,3 +52,5 @@ doc
 demo
 report
 dist
+
+*.sh

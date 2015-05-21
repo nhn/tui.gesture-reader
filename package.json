@@ -1,8 +1,31 @@
 {
   "name": "component-gesture-flick",
   "version": "1.0.0",
-  "description": "type of mobile touch event detector",
+  "description": "모바일 이벤트의 플리킹 이벤트를 판별하는 모듈",
   "private": true,
+  "featureList": [
+    "터치이벤트 좌표들을 통해 이동방향을 추적한다.",
+    "* N/E/S/W",
+    "* NE/ES/SW/WN",
+    "넘겨받은 이벤트데이터로 이벤트의 종류를 추적한다.",
+    "* click",
+    "* dbclick",
+    "* flick"
+  ],
+  "dependency": [
+    "code-snippet#~1.1.0"
+  ],
+  "test": {
+    "PC": [
+      "IE7~11",
+      "Chrome",
+      "Firefox"
+    ],
+    "Mobile": [
+      "iOS 8",
+      "Chrome Emulator"
+    ]
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-cssmin": "^0.10.0",
@@ -18,10 +41,20 @@
     "jasmine-jquery": "^2.0.5",
     "karma-coverage": "^0.2.6",
     "karma-junit-reporter": "^0.2.2",
-    "karma-webdriver-launcher": "git+https://github.com/everedifice/karma-webdriver-launcher.git"
+    "karma-webdriver-launcher": "git+https://github.com/everedifice/karma-webdriver-launcher.git",
+    "readme-builder": "git+https://github.com/jein-yi/readme-builder.git"
   },
+  "tutorial": "제스처-플",
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc -c conf.json"
   },
-  "author": "FE"
+  "author": "FE",
+  "history" : {
+    "1.0.0" : {
+      "content" : "배포",
+      "date": "2015.05",
+      "author": "이제인 <jein.yi@nhnent.com>",
+      "hasAPI" : true
+    }
+  }
 }
