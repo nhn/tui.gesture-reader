@@ -22,7 +22,9 @@
       "Firefox"
     ],
     "Mobile": [
-      "iOS 8",
+      "Galaxy Note I(Android 2.3), II(Android 4.1)",
+      "Galaxy S III(Android 4.0), IV(Android 4.2.2)",
+      "iPhone 5S(iOS 8)",
       "Chrome Emulator"
     ]
   },
@@ -44,7 +46,7 @@
     "karma-webdriver-launcher": "git+https://github.com/everedifice/karma-webdriver-launcher.git",
     "readme-builder": "git+https://github.com/jein-yi/readme-builder.git"
   },
-  "tutorial": "제스처-플",
+  "tutorial": "제스처-플릭",
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc -c conf.json"
   },
