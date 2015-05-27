@@ -12,14 +12,15 @@ Gesture Flick
 	* flick
 
 ## Documentation
-* API : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0
-* Tutorial : https://github.nhnent.com/fe/component-gesture-flick/wiki/제스처-플릭-컴포넌트-적용방법
-* CI : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
+* **API** : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0
+* **Tutorial** : https://github.nhnent.com/fe/component-gesture-flick/wiki/제스처-플릭-컴포넌트-적용방법
+
+* **CI** : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
 
 
 
 ## Dependency
-* code-snippet#~1.0.2
+* ne-code-snippet: ~1.0.2
 
 ## Test environment
 * PC
@@ -42,4 +43,4 @@ Gesture Flick
 ## History
 | Version | Description | Date | Developer |
 | ---- | ---- | ---- | ---- |
-| <a href="https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0">1.0.0</a> | 배포 | 2015.05 | 이제인 <jein.yi@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0">1.0.0</a> | 배포 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |
