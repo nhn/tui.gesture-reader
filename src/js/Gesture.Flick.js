@@ -2,7 +2,7 @@
  * @fileoverview discriminate type of touch event
  */
 
-var Gesture = ne.util.defineModule('ne.component.Gesture');
+ne.util.defineNamespace('ne.component.Gesture');
 
 /**
  * To find out it's flick or click or nothing from event datas.
@@ -15,7 +15,7 @@ var Gesture = ne.util.defineModule('ne.component.Gesture');
  *      minDist: 15 // range(distance) to check movement
  * });
  */
-Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.prototype */{
+ne.component.Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.prototype */{
     /**
      * time is considered flick.
      */
