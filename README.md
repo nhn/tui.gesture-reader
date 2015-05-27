@@ -14,7 +14,6 @@ Gesture Flick
 ## Documentation
 * **API** : https://github.nhnent.com/pages/fe/component-gesture-flick/1.0.0
 * **Tutorial** : https://github.nhnent.com/fe/component-gesture-flick/wiki/제스처-플릭-컴포넌트-적용방법
-
 * **CI** : http://fe.nhnent.com:8080/jenkins/job/component-gesture-flick/
 
 
