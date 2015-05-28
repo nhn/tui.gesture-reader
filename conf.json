@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/js/Gesture.Flick.js",
+      "src/js",
       "README.md"
     ],
     "exclude": [],
