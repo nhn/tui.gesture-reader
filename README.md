@@ -1,22 +1,22 @@
 Gesture Reader
 ===============
-제스처 리더 컴포넌트<br>
-이벤트 또는 포인트 좌표로 이벤트의 타입과 종류를 판별한다.
+플릭 이벤트 및 포인트 좌표를 비교하여 이벤트 타입과 방향을 판별하는 모듈
 
 ## Feature
-* Touch 또는 Click 이벤트의 좌표로 사용자 제스쳐의 방향을 판독
+* 터치이벤트 좌표들을 통해 이동방향을 추적한다.
 	* N/E/S/W
 	* NE/ES/SW/WN
-* 이벤트 데이터로 사용자 제스쳐의 종류를 판독
-	* click/tab
-	* dbclick/dbtab
+* 넘겨받은 이벤트데이터로 이벤트의 종류를 추적한다.
+	* click
+	* dbclick
 	* flick
 
 ## Documentation
 * **API** : https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0
-* **Tutorial** : https://github.nhnent.com/fe/component-gesture-reader/wiki/제스처-플릭-컴포넌트-적용방법
+* **Tutorial** : https://github.nhnent.com/fe/component-gesture-reader/wiki/제스처-리더-컴포넌트-적용방법
 * **Sample** - https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0/tutorial-sample1.html
 * **CI** : http://fe.nhnent.com:8080/jenkins/job/component-gesture-reader/
+
 
 
 ## Dependency
