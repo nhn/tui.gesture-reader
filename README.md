@@ -8,8 +8,8 @@ Gesture Flick
 	* N/E/S/W
 	* NE/ES/SW/WN
 * 이벤트 데이터로 사용자 제스쳐의 종류를 판독
-	* click
-	* dbclick
+	* click/tab
+	* dbclick/dbtab
 	* flick
 
 ## Documentation
