@@ -1,3 +1,4 @@
+(function() {
 /**
  * @fileoverview discriminate type of touch event
  */
@@ -6,16 +7,16 @@ ne.util.defineNamespace('ne.component.Gesture');
 
 /**
  * To find out it's flick or click or nothing from event datas.
- * @namespace ne.component.Gesture.Flick
+ * @namespace ne.component.Gesture.Reader
  * @example
- * var movedetector = new ne.component.MoveDetector({
+ * var movedetector = new ne.component.Gesture.Reader({
  *      flickTime: 300, // time to check flick
  *      flickRange: 250, // range(distance) to check flick
  *      clickTime: 200, // time to check click
  *      minDist: 15 // range(distance) to check movement
  * });
  */
-ne.component.Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.prototype */{
+ne.component.Gesture.Reader = ne.util.defineClass(/** @lends ne.component.Gesture.Flick.prototype */{
     /**
      * time is considered flick.
      */
@@ -226,3 +227,4 @@ ne.component.Gesture.Flick = ne.util.defineClass(/** @lends ne.component.Gesture
         this.clickTimer = null;
     }
 });
+})();

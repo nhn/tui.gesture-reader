@@ -5,7 +5,7 @@ describe('Test MoveDetector by touch event information.', function() {
         i;
 
     beforeEach(function() {
-        movedetector = new ne.component.Gesture.Flick({});
+        movedetector = new ne.component.Gesture.Reader({});
         // event mock (10, 0) -> (408, 199)
         pointList = [],
         event = {},

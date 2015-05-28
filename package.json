@@ -1,5 +1,5 @@
 {
-  "name": "component-gesture-flick",
+  "name": "component-gesture-reader",
   "version": "1.0.0",
   "description": "플릭 이벤트 및 포인트 좌표를 비교하여 이벤트 타입과 방향을 판별하는 모듈",
   "private": true,
