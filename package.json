@@ -49,6 +49,7 @@
     "readme-builder": "git+https://github.com/jein-yi/readme-builder.git",
     "requirejs": "^2.1.14"
   },
+  "samplePage": "sample1.html",
   "tutorial": "제스처-플릭",
   "scripts": {
     "doc": "./node_modules/.bin/jsdoc -c conf.json"
