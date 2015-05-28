@@ -1,7 +1,7 @@
 {
   "name": "component-gesture-flick",
   "version": "1.0.0",
-  "description": "모바일 이벤트의 플리킹 이벤트를 판별하는 모듈",
+  "description": "플릭 이벤트 및 포인트 좌표를 비교하여 이벤트 타입과 방향을 판별하는 모듈",
   "private": true,
   "featureList": [
     "터치이벤트 좌표들을 통해 이동방향을 추적한다.",
