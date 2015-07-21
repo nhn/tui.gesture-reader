@@ -31,8 +31,10 @@ ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.
     startTime: null,
 
     /**
-     * Initailize
-     * @param option
+     * Initailize DoubleClick Reader
+     * @param {object} option
+     *  @param {number} [option.clickTerm] Available time distance between first and second click event.
+     *  @param {number} [option.maxDist] Available movement distance
      */
     initialize: function(option) {
         this.clickTerm = option.clickTerm || this.clickTerm;

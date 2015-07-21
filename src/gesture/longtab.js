@@ -28,10 +28,8 @@ ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.Lon
     /**
      * set options
      * @param {object} option
-     *      @param {number} [option.flickTime] time to check flick
-     *      @param {number} [option.flickRange] range to check flick
-     *      @param {number} [option.clickTime] time to check click
      *      @param {number} [option.minDist] distance to check movement
+     *      @param {number} [option.longTabTerm] Term for checking longtab
      */
     initialize: function(option) {
         this.minDist = option.flickTime || this.minDist;

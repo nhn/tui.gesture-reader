@@ -28,6 +28,10 @@ ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick
 
     /**
      * Initialize Flicking
+     * @param {object} option Flick options
+     *  @param {number} [option.flickTime] Flick time, if in this time, do not check move distance
+     *  @param {number} [option.flickRange] Flick range, if not in time, compare move distance with flick ragne.
+     *  @param {number} [option.minDist] Minimum distance for check available movement.
      */
     initialize: function(option) {
         this.flickTime = option.flickTime || this.flickTime;
