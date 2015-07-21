@@ -2,10 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title></title>
-    <script type="text/javascript" src="lib/code-snippet.js"></script>
-    <script type="text/javascript" src="src/js/move-detector.js"></script>
+    <script type="text/javascript" src="js/code-snippet.js"></script>
+    <script type="text/javascript" src="js/gesture-reader.js"></script>
     <style type="text/css">
         #detect {
             width:500px; height:600px; background-color:hotpink;
@@ -26,21 +25,21 @@
     <span id="direction">Direction : <em></em></span>
     <span id="type">Type : <em></em></span>
 </div>
-    <script type="text/javascript">
-        var DIRECTION = {
-            W: 'WEST',
-            N: 'NORTH',
-            S: 'SOUTH',
-            E: 'EAST'
-        };
+<script type="text/javascript">
+    var DIRECTION = {
+        W: 'WEST',
+        N: 'NORTH',
+        S: 'SOUTH',
+        E: 'EAST'
+    };
 
-        var info = {},
+    var info = {},
             detect = document.getElementById('detect'),
             direction = document.getElementById('direction'),
             type = document.getElementById('type'),
-            movedetector = new ne.component.MoveDetector({
-                flickRange: 100,
-                flickTime: 200
+            movedetector = new ne.component.Gesture.Reader({
+                type: 'flick',
+                flickRange: 100
             });
 
         detect.onmousedown = function(e) {
@@ -66,8 +65,10 @@
             });
 
             setTimeout(function() {
-                if (result.type) {
-                    type.getElementsByTagName('em')[0].innerHTML = result.type;
+                if (result.isFlick) {
+                    type.getElementsByTagName('em')[0].innerHTML = 'flick';
+                } else {
+                    type.getElementsByTagName('em')[0].innerHTML = 'not flick';
                 }
                 if (result.direction) {
                     direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];

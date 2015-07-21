@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     // All upfront config goes in a massive nested object.
     grunt.initConfig({
         // You can set arbitrary key-value pairs.
-        distFolder: 'dist',
+        distFolder: './',
         name: 'gesture-reader',
         // You can also set the value of a key as parsed JSON.
         // Allows us to reference properties we declared in package.json.
@@ -23,7 +23,8 @@ module.exports = function(grunt) {
                 // The files to concatenate:
                 // Notice the wildcard, which is automatically expanded.
                 src: [
-                    'src/js/*.js'
+                    'src/**/reader.js',
+                    'src/**/*.js'
                 ],
                 // The destination file:
                 // Notice the angle-bracketed ERB-like templating,
