@@ -12,9 +12,9 @@ Gesture Reader
 * DoubleClick : 더블클릭 여부를 판별한다.
 
 ## Documentation
-* **API** : https://nhnent.github.io/fe.component-gesture-reader/1.1.0
+* **API** : https://nhnent.github.io/fe.component-gesture-reader/lastest
 * **Tutorial** : https://github.com/nhnent/fe.component-gesture-reader/wiki/제스처-리더-컴포넌트-적용방법
-* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/1.1.0/tutorial-sample1.html
+* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/lastest/tutorial-sample1.html
 
 
 
