@@ -17,11 +17,6 @@ ne.component.Gesture.Reader = ne.util.defineClass(/** @lends ne.component.Gestur
     /**
      * set options
      * @param {object} option
-     *      @param {number} [option.flickTime] time to check flick
-     *      @param {number} [option.flickRange] The range to check flick
-     *      @param {number} [option.clickTime] The time to check click
-     *      @param {number} [option.minDist] Distance to check movement for longtab and flick
-     *      @param {number} [option.maxDist] Distance to check movement for doubleclick
      */
     init: function(option) {
         if (option.type === 'flick') {
