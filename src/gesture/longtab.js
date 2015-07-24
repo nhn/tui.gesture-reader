@@ -1,5 +1,6 @@
 /**
- * @fileoverview discriminate longtab event
+ * @fileoverview discriminate long tab event
+ * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.LongTab');
