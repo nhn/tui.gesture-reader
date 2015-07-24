@@ -1,6 +1,7 @@
 (function() {
 /**
  * @fileoverview discriminate type of touch event
+ * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture');
@@ -31,6 +32,7 @@ ne.component.Gesture.Reader = ne.util.defineClass(/** @lends ne.component.Gestur
 });
 /**
  * @fileoverview discriminate doubleclick event
+ * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.DoubleClick');
@@ -129,6 +131,7 @@ ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.
 };
 /**
  * @fileoverview discriminate flick event
+ * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.Flick');
@@ -280,7 +283,8 @@ ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick
     }
 };
 /**
- * @fileoverview discriminate longtab event
+ * @fileoverview discriminate long tab event
+ * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.LongTab');
