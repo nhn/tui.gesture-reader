@@ -1,0 +1,17 @@
+{
+  "sample1": {
+    "title" : "Mobile Flick"
+  },
+  "sample1_1": {
+    "title" : "Mobile LongTab"
+  },
+  "sample2": {
+    "title" : "PC Flick"
+  },
+  "sample3": {
+    "title" : "PC DoubleClick"
+  },
+  "sample4" : {
+    "title" : "PC LongTab"
+  }
+}
