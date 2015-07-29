@@ -1,7 +1,6 @@
 (function() {
 /**
  * @fileoverview discriminate type of touch event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture');
@@ -18,6 +17,11 @@ ne.component.Gesture.Reader = ne.util.defineClass(/** @lends ne.component.Gestur
     /**
      * set options
      * @param {object} option
+     *      @param {number} [option.flickTime] time to check flick
+     *      @param {number} [option.flickRange] The range to check flick
+     *      @param {number} [option.clickTime] The time to check click
+     *      @param {number} [option.minDist] Distance to check movement for longtab and flick
+     *      @param {number} [option.maxDist] Distance to check movement for doubleclick
      */
     init: function(option) {
         if (option.type === 'flick') {
@@ -32,16 +36,11 @@ ne.component.Gesture.Reader = ne.util.defineClass(/** @lends ne.component.Gestur
 });
 /**
  * @fileoverview discriminate doubleclick event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.DoubleClick');
 
-/**
- * Modules of Discrimination double click
- * @namespace ne.component.Gesture.Reader.DoubleClick
- */
-ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.DoubleClick */{
+ne.component.Gesture.Reader.DoubleClick = /** @lends ne.component.Gesture.Reader.DoubleClick */{
     /**
      * Timer for check click twice in time
      */
@@ -64,10 +63,8 @@ ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.
     startTime: null,
 
     /**
-     * Initailize DoubleClick Reader
-     * @param {object} option
-     *  @param {number} [option.clickTerm] Available time distance between first and second click event.
-     *  @param {number} [option.maxDist] Available movement distance
+     * Initailize
+     * @param option
      */
     initialize: function(option) {
         this.clickTerm = option.clickTerm || this.clickTerm;
@@ -131,15 +128,10 @@ ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.
 };
 /**
  * @fileoverview discriminate flick event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.Flick');
 
-/**
- * Modules of Discrimination flick
- * @namespace ne.component.Gesture.Reader.Flick
- */
 ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick */{
     /**
      * time is considered flick.
@@ -160,10 +152,6 @@ ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick
 
     /**
      * Initialize Flicking
-     * @param {object} option Flick options
-     *  @param {number} [option.flickTime] Flick time, if in this time, do not check move distance
-     *  @param {number} [option.flickRange] Flick range, if not in time, compare move distance with flick ragne.
-     *  @param {number} [option.minDist] Minimum distance for check available movement.
      */
     initialize: function(option) {
         this.flickTime = option.flickTime || this.flickTime;
@@ -283,16 +271,11 @@ ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick
     }
 };
 /**
- * @fileoverview discriminate long tab event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
+ * @fileoverview discriminate longtab event
  */
 
 ne.util.defineNamespace('ne.component.Gesture.Reader.LongTab');
 
-/**
- * Modules of Discrimination longtab
- * @namespace ne.component.Gesture.Reader.LongTab
- */
 ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.LongTab */{
     /**
      * width is considered moving.
@@ -313,8 +296,10 @@ ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.Lon
     /**
      * set options
      * @param {object} option
+     *      @param {number} [option.flickTime] time to check flick
+     *      @param {number} [option.flickRange] range to check flick
+     *      @param {number} [option.clickTime] time to check click
      *      @param {number} [option.minDist] distance to check movement
-     *      @param {number} [option.longTabTerm] Term for checking longtab
      */
     initialize: function(option) {
         this.minDist = option.flickTime || this.minDist;

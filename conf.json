@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/js",
+      "src/gesture",
       "README.md"
     ],
     "exclude": [],
@@ -15,7 +15,7 @@
     "default": {
       "outputSourceFiles" : true
     },
-    "applicationName": "component-m-touch-detector",
+    "applicationName": "component-gesture-reader",
     "disqus": "",
     "googleAnalytics": "",
     "openGraph": {

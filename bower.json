@@ -23,6 +23,6 @@
     "samples"
   ],
   "dependencies": {
-    "ne-code-snippet" : "~1.0.2"
+    "ne-code-snippet" : "~1.0.4"
   }
 }

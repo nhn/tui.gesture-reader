@@ -1,26 +1,26 @@
 Gesture Reader
 ===============
-제스처 리더 컴포넌트<br>이벤트 또는 포인트 좌표로 이벤트의 타입과 종류를 판별한다.
+Gesture Reader Component.<br>
+Distinguish gesture with event object and position points.
 
 ## Feature
-* Touch 또는 Click 이벤트의 좌표로 사용자 제스쳐의 방향을 판독
+* Create reader to distinguish each event.
+* Flick : Distinguish flick or not.
 	* N/E/S/W
 	* NE/ES/SW/WN
-* 이벤트 데이터로 사용자 제스쳐의 종류를 판독
-	* click/tab
-	* dbclick/dbtab
-	* flick
+	* isFlick
+* LongTab : Distinguish logTab or not.
+* DoubleClick : Distinguish double click or not.
 
 ## Documentation
-* **API** : https://nhnent.github.io/fe.component-gesture-reader/1.0.0
-* **Tutorial** : https://github.com/nhnent/fe.component-gesture-reader/wiki/제스처-리더-컴포넌트-적용방법
-* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/1.0.0/tutorial-sample1.html
-
+* **API** : https://nhnent.github.io/fe.component-gesture-reader/lastest
+* **Tutorial** : https://github.com/nhnent/fe.component-gesture-reader/wiki/Gesture-Reader-Tutorial
+* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/lastest/tutorial-sample1.html
 
 
 
 ## Dependency
-* ne-code-snippet: ~1.0.2
+* ne-code-snippet: ~1.0.4
 
 ## Test environment
 * PC
@@ -36,14 +36,15 @@ Gesture Reader
 
 ## Download/Install
 * Bower:
-   * 최신버전 : `bower install ne-component-gesture-reader#master`
-   * 특정버전 : `bower install ne-component-gesture-reader[#tag]`
+   * lastest : `bower install ne-component-gesture-reader#master`
+   * each version : `bower install ne-component-gesture-reader[#tag]`
 * Download: https://github.com/nhnent/fe.component-gesture-reader
 
 ## History
 | Version | Description | Date | Developer |
 | ---- | ---- | ---- | ---- |
-| <a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0">1.0.0</a> | 배포 | 2015.05 | FE개발팀 이제인 <jein.yi@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.1.0">1.1.0</a> | Refactoring and change structure, API changed | 2015.05 |NHN ent. FE Dev team. Jein Yi<jein.yi@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0">1.0.0</a> | Release | 2015.05 | NHN ent. FE Dev team. Jein Yi <jein.yi@nhnent.com> |
 
 ## LICENSE
-[MIT 라이선스](LICENSE)로 자유롭게 사용할 수 있습니다.
+[MIT LICENSE](LICENSE)
