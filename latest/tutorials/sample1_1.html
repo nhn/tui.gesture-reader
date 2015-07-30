@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <title></title>
+    <script type="text/javascript" src="src/js/code-snippet.js"></script>
+    <script type="text/javascript" src="src/js/gesture-reader.js"></script>
+    <style type="text/css">
+        #detect {
+            width:500px; height:600px; background-color:hotpink;
+        }
+        .box {position:absolute; left: 520px; top:10px; background-color:lightpink; width:150px; height:150px;
+            font-family: consolas, monaco, monospace;
+            font-size: 12px; }
+        .box span {display:block;}
+        .menu {
+            background-color:#fff; border:1px solid #eee;
+            position:absolute;
+            padding: 5px;
+            font-family: consolas, monaco, monospace;
+        }
+        .menu ul {list-style: none; padding:0;magin:0; }
+        .menu ul li {padding:0 5px; text-decoration:underline; }
+        @media screen and (max-width: 400px) {
+            .box {left: 150px; top:400px;}
+        }
+    </style>
+</head>
+<body>
+<div id="detect">
+</div>
+<div class="box">
+    <span id="type">Type : <em></em></span>
+</div>
+<div id="menu" class="menu" style="display:none;">
+    <ul>
+        <li>Menu A</li>
+        <li>Menu B</li>
+        <li>Menu C</li>
+    </ul>
+</div>
+<script type="text/javascript">
+
+    var info = {},
+        menu = document.getElementById('menu'),
+        isLongtab = false,
+        detect = document.getElementById('detect'),
+        direction = document.getElementById('direction'),
+        type = document.getElementById('type'),
+        movedetector = new ne.component.Gesture.Reader({
+            type: 'longtab'
+        });
+
+    detect.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        isLongtab = false;
+        menu.style.display = 'none';
+        e = e || window.event
+        info.x = e.changedTouches[0].clientX;
+        info.y = e.changedTouches[0].clientY;
+        movedetector.startTab(info);
+        timer = setTimeout(function() {
+            isLongtab = movedetector.isLongTab(info, showMenu);
+            if (isLongtab) {
+                type.innerHTML = 'Type : <em>LongTab</em>';
+            }
+        }, 1000);
+    });
+
+    detect.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        clearTimeout(timer);
+    });
+
+    detect.addEventListener('touchend', function(e) {
+        e = e || window.event;
+        info.x = e.changedTouches[0].clientX;
+        info.y = e.changedTouches[0].clientY;
+        clearTimeout(timer);
+        if (!isLongtab) {
+            type.innerHTML = 'Type : <em>not LongTab</em>'
+        }
+    });
+
+    function showMenu() {
+        menu.style.display = 'block';
+        menu.style.left = info.x + 10 + 'px';
+        menu.style.top = info.y + 10 + 'px';
+    }
+
+</script>
+</body>
+</html>

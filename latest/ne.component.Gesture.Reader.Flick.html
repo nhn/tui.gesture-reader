@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: Flick</title>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-fe2.css">
+</head>
+<body>
+
+<div id="wrap">
+
+    <div class="header">
+
+        <div class="container-fluid">
+            <h3><a href="index.html">API Documentation</a> <small>FE개발팀</small></h3>
+        </div>
+
+    </div>
+
+    <div class="body">
+        <div id="navigation" class="navigation"><h3>Samples</h3><ul class="list samples"><li class="item"><a href="tutorial-sample1.html">Mobile Flick</a></li><li class="item"><a href="tutorial-sample1_1.html">Mobile LongTab</a></li><li class="item"><a href="tutorial-sample2.html">PC Flick</a></li><li class="item"><a href="tutorial-sample3.html">PC DoubleClick</a></li><li class="item"><a href="tutorial-sample4.html">PC LongTab</a></li></ul><h3>Namespaces</h3><ul class="list namespaces"><li class="item" id="ne.component.Gesture.Reader"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.html">Reader</a></span><ul class="sublist methods ne.component.Gesture.Reader"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.html#init">init</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.DoubleClick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.DoubleClick.html">DoubleClick</a></span><ul class="sublist members ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTerm">clickTerm</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTimer">clickTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.maxDist">maxDist</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.startTime">startTime</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.DoubleClick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clearTimer">clearTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.isAvailableZone">isAvailableZone</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.setTimer">setTimer</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.Flick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.Flick.html">Flick</a></span><ul class="sublist members ne.component.Gesture.Reader.Flick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.Flick.html#.flickRange">flickRange</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.flickTime">flickTime</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.Flick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.Flick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.Flick.html#.figure">figure</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCardinalPoints">getCardinalPoints</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCloseCardinal">getCloseCardinal</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getDirection">getDirection</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.isFlick">isFlick</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.LongTab"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.LongTab.html">LongTab</a></span><ul class="sublist members ne.component.Gesture.Reader.LongTab"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.longTabTerm">longTabTerm</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.tabTimer">tabTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.LongTab"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.LongTab"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.isLongTab">isLongTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.resetTimer">resetTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.startTab">startTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.stopTab">stopTab</a></li></ul></li></ul></div>
+        <div id="main" class="main">
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        
+            <span class="ancestors"><a href="ne.component.Gesture.Reader.html">.Reader</a>.</span>
+        
+        Flick
+        
+        
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modules of Discrimination flick</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+        <dd class="tag-source"><ul class="dummy"><li>
+            <a href="flick.js.html">flick.js</a>, <a href="flick.js.html#line8">line 8</a>
+        </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+        
+    
+    </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+    <div class="container-members">
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id=".flickRange">
+        <span class="type-signature"><span class="icon green">static</span> </span>flickRange<span class="type-signature"></span>
+        
+        <div class="container-source members">
+            <code><a href="flick.js.html">flick.js</a></code>,
+            <code><a href="flick.js.html#line20">line 20</a></code>
+        </div>
+        
+    </h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>width is considered flick.</p>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id=".flickTime">
+        <span class="type-signature"><span class="icon green">static</span> </span>flickTime<span class="type-signature"></span>
+        
+        <div class="container-source members">
+            <code><a href="flick.js.html">flick.js</a></code>,
+            <code><a href="flick.js.html#line16">line 16</a></code>
+        </div>
+        
+    </h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>time is considered flick.</p>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id=".minDist">
+        <span class="type-signature"><span class="icon green">static</span> </span>minDist<span class="type-signature"></span>
+        
+        <div class="container-source members">
+            <code><a href="flick.js.html">flick.js</a></code>,
+            <code><a href="flick.js.html#line24">line 24</a></code>
+        </div>
+        
+    </h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>width is considered moving.</p>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id=".type">
+        <span class="type-signature"><span class="icon green">static</span> </span>type<span class="type-signature"></span>
+        
+        <div class="container-source members">
+            <code><a href="flick.js.html">flick.js</a></code>,
+            <code><a href="flick.js.html#line28">line 28</a></code>
+        </div>
+        
+    </h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Reader type</p>
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+</dd>
+
+        </dl>
+    </div>
+    
+
+    
+    <div class="container-methods">
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    
+        <h4 class="name" id=".figure">
+            <span class="type-signature"><span class="icon green">static</span> </span>figure<span class="signature">(eventData)</span><span class="type-signature"> &rarr; {object}</span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line48">line 48</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>pick event type from eventData</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>eventData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>event Data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+    <div class="container-returns">
+        <div class="returns">
+        <h5>Returns:</h5>
+        <div class="details">
+        
+                
+    
+<span class="param-type">object</span>
+
+
+
+            
+        </div>
+        </div>
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id=".getCardinalPoints">
+            <span class="type-signature"><span class="icon green">static</span> </span>getCardinalPoints<span class="signature">(first, last)</span><span class="type-signature"></span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line73">line 73</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>return cardinal points figured out</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>first</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>start point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name first"><code>last</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>end point</p></td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id=".getCloseCardinal">
+            <span class="type-signature"><span class="icon green">static</span> </span>getCloseCardinal<span class="signature">(first, last, cardinalPoint)</span><span class="type-signature"> &rarr; {string}</span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line101">line 101</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>return nearest four cardinal points</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>first</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>start point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name first"><code>last</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>end point</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name first"><code>cardinalPoint</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>cardinalPoint from getCardinalPoints</p></td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+    <div class="container-returns">
+        <div class="returns">
+        <h5>Returns:</h5>
+        <div class="details">
+        
+                
+    
+<span class="param-type">string</span>
+
+
+
+            
+        </div>
+        </div>
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id=".getDirection">
+            <span class="type-signature"><span class="icon green">static</span> </span>getDirection<span class="signature">(list)</span><span class="type-signature"> &rarr; {string}</span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line60">line 60</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>return direction figured out</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>list</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>eventPoint List</p></td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+    <div class="container-returns">
+        <div class="returns">
+        <h5>Returns:</h5>
+        <div class="details">
+        
+                
+    
+<span class="param-type">string</span>
+
+
+
+            
+        </div>
+        </div>
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id=".initialize">
+            <span class="type-signature"><span class="icon green">static</span> </span>initialize<span class="signature">(option)</span><span class="type-signature"></span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line37">line 37</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Initialize Flicking</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>option</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Flick options</p>
+                <h6>Properties:</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>flickTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Flick time, if in this time, do not check move distance</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name first"><code>flickRange</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Flick range, if not in time, compare move distance with flick ragne.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name first"><code>minDist</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Minimum distance for check available movement.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    
+        <h4 class="name" id=".isFlick">
+            <span class="type-signature"><span class="icon green">static</span> </span>isFlick<span class="signature">(eventData)</span><span class="type-signature"> &rarr; {string}</span>
+            
+                <div class="container-source method">
+                    <code><a href="flick.js.html">flick.js</a></code>,
+                    <code><a href="flick.js.html#line134">line 134</a></code>
+                </div>
+            
+        </h4>
+
+
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>extract type of event</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <div class="params">
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name first"><code>eventData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>event data</p></td>
+        </tr>
+
+    
+    </tbody>
+</table></div>
+    </div>
+    
+
+    
+    <div class="container-returns">
+        <div class="returns">
+        <h5>Returns:</h5>
+        <div class="details">
+        
+                
+    
+<span class="param-type">string</span>
+
+
+
+            
+        </div>
+        </div>
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    <!--
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>reader.isFlick({
+     start: 1000,
+     end: 1100,
+     list: [
+           {
+               x: 10,
+               y: 10
+           },
+           {
+               x: 11,
+               y: 11
+           }
+     ]
+});</code></pre>
+
+    
+</dd>
+
+        </dl>
+    </div>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+</div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+<script>
+(function() {
+// 영역 height 설정
+var height = (window.innerHeight || document.documentElement.clientHeight || document.getElementByTagName('body')[0].clientHeight) - 50;
+var navigation = document.getElementById('navigation');
+var main = document.getElementById('main');
+navigation.style.height = height + 'px';
+main.style.height = height + 'px';
+
+// IE 7,8을 위한 getElementsByClassName 구현
+var getElementsByClassName = function(className, parentElement) {
+	if(document.getElementsByClassName) {
+		return (parentElement || document).getElementsByClassName(className);
+	}
+
+    var regEx = new RegExp('(^| )'+className+'( |$)');
+	var nodes = new Array();
+    var elements = (parentElement || document.body).getElementsByTagName("*");
+    for(var i = 0, len = elements.length; i < len ; i++) {
+        if(regEx.test(elements[i].className)) {
+			nodes.push(elements[i]);
+		}
+	}
+	elements = null;
+    return nodes;
+}
+
+// url 파싱후 해당 카테고리만 display:block 처리
+var url = location.href;
+var path = url.lastIndexOf('/');
+var fileName = url.substring(path+1);
+var fullName = fileName.split('.');
+fullName.length -= 1;
+fullName = fullName.join('.');
+fullName = fullName.split('-');
+fullName = fullName[fullName.length - 1];
+var lnbList = getElementsByClassName(fullName);
+if(lnbList.length && lnbList.length > 0) {
+    for(var i = 0, len = lnbList.length; i < len; i++) {
+        lnbList[i].className += ' selected';
+    }
+}
+
+var title = document.getElementById(fullName);
+if(title) {
+    title.className += ' selected';
+    title.innerHTML = '<span class="arrow">▶</span>' + title.innerHTML;
+
+    var static = getElementsByClassName('static', title);
+    if(static) {
+        static[0].className += ' selected';
+    }
+}
+})();
+</script>
+<script type="text/javascript" src="scripts/prettify/prettify.js"></script>
+<script type="text/javascript" src="scripts/prettify/lang-css.js"></script>
+<script type="text/javascript">prettyPrint();</script>
+<script type="text/javascript" src="scripts/linenumber.js"></script>
+</body>
+</html>

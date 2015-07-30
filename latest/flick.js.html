@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: flick.js</title>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-fe2.css">
+</head>
+<body>
+
+<div id="wrap">
+
+    <div class="header">
+
+        <div class="container-fluid">
+            <h3><a href="index.html">API Documentation</a> <small>FE개발팀</small></h3>
+        </div>
+
+    </div>
+
+    <div class="body">
+        <div id="navigation" class="navigation"><h3>Samples</h3><ul class="list samples"><li class="item"><a href="tutorial-sample1.html">Mobile Flick</a></li><li class="item"><a href="tutorial-sample1_1.html">Mobile LongTab</a></li><li class="item"><a href="tutorial-sample2.html">PC Flick</a></li><li class="item"><a href="tutorial-sample3.html">PC DoubleClick</a></li><li class="item"><a href="tutorial-sample4.html">PC LongTab</a></li></ul><h3>Namespaces</h3><ul class="list namespaces"><li class="item" id="ne.component.Gesture.Reader"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.html">Reader</a></span><ul class="sublist methods ne.component.Gesture.Reader"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.html#init">init</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.DoubleClick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.DoubleClick.html">DoubleClick</a></span><ul class="sublist members ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTerm">clickTerm</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTimer">clickTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.maxDist">maxDist</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.startTime">startTime</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.DoubleClick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clearTimer">clearTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.isAvailableZone">isAvailableZone</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.setTimer">setTimer</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.Flick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.Flick.html">Flick</a></span><ul class="sublist members ne.component.Gesture.Reader.Flick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.Flick.html#.flickRange">flickRange</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.flickTime">flickTime</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.Flick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.Flick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.Flick.html#.figure">figure</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCardinalPoints">getCardinalPoints</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCloseCardinal">getCloseCardinal</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getDirection">getDirection</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.isFlick">isFlick</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.LongTab"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.LongTab.html">LongTab</a></span><ul class="sublist members ne.component.Gesture.Reader.LongTab"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.longTabTerm">longTabTerm</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.tabTimer">tabTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.LongTab"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.LongTab"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.isLongTab">isLongTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.resetTimer">resetTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.startTab">startTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.stopTab">stopTab</a></li></ul></li></ul></div>
+        <div id="main" class="main">
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileoverview discriminate flick event
+ * @author NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com>
+ */
+
+ne.util.defineNamespace('ne.component.Gesture.Reader.Flick');
+
+/**
+ * Modules of Discrimination flick
+ * @namespace ne.component.Gesture.Reader.Flick
+ */
+ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick */{
+    /**
+     * time is considered flick.
+     */
+    flickTime: 100,
+    /**
+     * width is considered flick.
+     */
+    flickRange: 300,
+    /**
+     * width is considered moving.
+     */
+    minDist: 10,
+    /**
+     * Reader type
+     */
+    type: 'flick',
+
+    /**
+     * Initialize Flicking
+     * @param {object} option Flick options
+     *  @param {number} [option.flickTime] Flick time, if in this time, do not check move distance
+     *  @param {number} [option.flickRange] Flick range, if not in time, compare move distance with flick ragne.
+     *  @param {number} [option.minDist] Minimum distance for check available movement.
+     */
+    initialize: function(option) {
+        this.flickTime = option.flickTime || this.flickTime;
+        this.flickRange = option.flickRange || this.flickRange;
+        this.minDist = option.minDist || this.minDist;
+    },
+
+    /**
+     * pick event type from eventData
+     * @param {object} eventData event Data
+     * @return {object}
+     */
+    figure: function(eventData) {
+        return {
+            direction : this.getDirection(eventData.list),
+            isFlick: this.isFlick(eventData)
+        }
+    },
+
+    /**
+     * return direction figured out
+     * @param {array} list eventPoint List
+     * @returns {string}
+     */
+    getDirection: function(list) {
+        var first = list[0],
+            final = list[list.length-1],
+            cardinalPoint = this.getCardinalPoints(first, final),
+            res = this.getCloseCardinal(first, final, cardinalPoint);
+
+        return res;
+    },
+    /**
+     * return cardinal points figured out
+     * @param {object} first start point
+     * @param {object} last end point
+     */
+    getCardinalPoints: function(first, last) {
+        var verticalDist = first.y - last.y,
+            horizonDist = first.x - last.x,
+            NS = '',
+            WE = '';
+
+        if (verticalDist &lt; 0) {
+            NS = 'S';
+        } else if (verticalDist > 0) {
+            NS = 'N';
+        }
+
+        if (horizonDist &lt; 0) {
+            WE = 'E';
+        } else if (horizonDist > 0) {
+            WE = 'W';
+        }
+
+        return NS+WE;
+    },
+
+    /**
+     * return nearest four cardinal points
+     * @param {object} first start point
+     * @param {object} last end point
+     * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
+     * @returns {string}
+     */
+    getCloseCardinal: function(first, last, cardinalPoint) {
+        var slop = (last.y - first.y) / (last.x - first.x),
+            direction;
+        if (slop &lt; 0) {
+            direction = slop &lt; -1 ? 'NS' : 'WE';
+        } else {
+            direction = slop > 1 ? 'NS' : 'WE';
+        }
+
+        direction = ne.util.getDuplicatedChar(direction, cardinalPoint);
+        return direction;
+    },
+
+    /**
+     * extract type of event
+     * @param {object} eventData event data
+     * @returns {string}
+     * @example
+     * reader.isFlick({
+     *      start: 1000,
+     *      end: 1100,
+     *      list: [
+     *            {
+     *                x: 10,
+     *                y: 10
+     *            },
+     *            {
+     *                x: 11,
+     *                y: 11
+     *            }
+     *      ]
+     * });
+     */
+    isFlick: function(eventData) {
+        var start = eventData.start,
+            end = eventData.end,
+            list = eventData.list,
+            first = list[0],
+            final = list[list.length - 1],
+            timeDist = end - start,
+            xDist = Math.abs(first.x - final.x),
+            yDist = Math.abs(first.y - final.y),
+            isFlick;
+
+        if (timeDist &lt; this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
+            isFlick = true;
+        } else {
+            isFlick = false;
+        }
+
+        return isFlick;
+    }
+};</code></pre>
+        </article>
+    </section>
+
+
+
+</div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+<script>
+(function() {
+// 영역 height 설정
+var height = (window.innerHeight || document.documentElement.clientHeight || document.getElementByTagName('body')[0].clientHeight) - 50;
+var navigation = document.getElementById('navigation');
+var main = document.getElementById('main');
+navigation.style.height = height + 'px';
+main.style.height = height + 'px';
+
+// IE 7,8을 위한 getElementsByClassName 구현
+var getElementsByClassName = function(className, parentElement) {
+	if(document.getElementsByClassName) {
+		return (parentElement || document).getElementsByClassName(className);
+	}
+
+    var regEx = new RegExp('(^| )'+className+'( |$)');
+	var nodes = new Array();
+    var elements = (parentElement || document.body).getElementsByTagName("*");
+    for(var i = 0, len = elements.length; i < len ; i++) {
+        if(regEx.test(elements[i].className)) {
+			nodes.push(elements[i]);
+		}
+	}
+	elements = null;
+    return nodes;
+}
+
+// url 파싱후 해당 카테고리만 display:block 처리
+var url = location.href;
+var path = url.lastIndexOf('/');
+var fileName = url.substring(path+1);
+var fullName = fileName.split('.');
+fullName.length -= 1;
+fullName = fullName.join('.');
+fullName = fullName.split('-');
+fullName = fullName[fullName.length - 1];
+var lnbList = getElementsByClassName(fullName);
+if(lnbList.length && lnbList.length > 0) {
+    for(var i = 0, len = lnbList.length; i < len; i++) {
+        lnbList[i].className += ' selected';
+    }
+}
+
+var title = document.getElementById(fullName);
+if(title) {
+    title.className += ' selected';
+    title.innerHTML = '<span class="arrow">▶</span>' + title.innerHTML;
+
+    var static = getElementsByClassName('static', title);
+    if(static) {
+        static[0].className += ' selected';
+    }
+}
+})();
+</script>
+<script type="text/javascript" src="scripts/prettify/prettify.js"></script>
+<script type="text/javascript" src="scripts/prettify/lang-css.js"></script>
+<script type="text/javascript">prettyPrint();</script>
+<script type="text/javascript" src="scripts/linenumber.js"></script>
+</body>
+</html>
