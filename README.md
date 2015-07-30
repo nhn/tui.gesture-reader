@@ -13,9 +13,9 @@ Distinguish gesture with event object and position points.
 * DoubleClick : Distinguish double click or not.
 
 ## Documentation
-* **API** : https://nhnent.github.io/fe.component-gesture-reader/lastest
+* **API** : https://nhnent.github.io/fe.component-gesture-reader/latest
 * **Tutorial** : https://github.com/nhnent/fe.component-gesture-reader/wiki/Gesture-Reader-Tutorial
-* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/lastest/tutorial-sample1.html
+* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/latest/tutorial-sample1.html
 
 
 
@@ -36,7 +36,7 @@ Distinguish gesture with event object and position points.
 
 ## Download/Install
 * Bower:
-   * lastest : `bower install ne-component-gesture-reader#master`
+   * latest : `bower install ne-component-gesture-reader#master`
    * each version : `bower install ne-component-gesture-reader[#tag]`
 * Download: https://github.com/nhnent/fe.component-gesture-reader
 
