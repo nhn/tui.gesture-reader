@@ -3,13 +3,11 @@
  * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
-ne.util.defineNamespace('ne.component.Gesture.Reader.DoubleClick');
-
 /**
  * Modules of Discrimination double click
- * @namespace ne.component.Gesture.Reader.DoubleClick
+ * @namespace DoubleClick
  */
-ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.DoubleClick */{
+var DoubleClick = /**@lends DoubleClick */{
     /**
      * Timer for check click twice in time
      */
@@ -97,3 +95,5 @@ ne.component.Gesture.Reader.DoubleClick = /**@lends ne.component.Gesture.Reader.
         window.clearTimeout(this.clickTimer);
     }
 };
+
+module.exports = DoubleClick;

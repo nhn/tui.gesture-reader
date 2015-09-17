@@ -3,13 +3,11 @@
  * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
-ne.util.defineNamespace('ne.component.Gesture.Reader.Flick');
-
 /**
  * Modules of Discrimination flick
- * @namespace ne.component.Gesture.Reader.Flick
+ * @namespace Flick
  */
-ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick */{
+var Flick = /** @lends Flick */{
     /**
      * time is considered flick.
      */
@@ -151,3 +149,5 @@ ne.component.Gesture.Reader.Flick = /** @lends ne.component.Gesture.Reader.Flick
         return isFlick;
     }
 };
+
+module.exports = Flick;

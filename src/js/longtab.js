@@ -3,13 +3,11 @@
  * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
  */
 
-ne.util.defineNamespace('ne.component.Gesture.Reader.LongTab');
-
 /**
  * Modules of Discrimination longtab
- * @namespace ne.component.Gesture.Reader.LongTab
+ * @namespace LongTab
  */
-ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.LongTab */{
+var LongTab = /** @lends LongTab */{
     /**
      * width is considered moving.
      */
@@ -52,16 +50,8 @@ ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.Lon
 
     /**
      * Stop detect longtab roop.
-     * @param {object} pos position to end
-     * @param {function} callback
-     * @return
-     * @example
-     * reader.isLongTab({
-     *      x: 10,
-     *      y: 10
-     * }, function() {
-     *      showMenu();
-     * });
+     * @param {object} pos A position to end
+     * @param {function} callback A callback function
      */
     isLongTab: function(pos, callback) {
         var isSafeX,
@@ -97,3 +87,5 @@ ne.component.Gesture.Reader.LongTab = /** @lends ne.component.Gesture.Reader.Lon
         this.tabTimer = null;
     }
 };
+
+module.exports = LongTab;

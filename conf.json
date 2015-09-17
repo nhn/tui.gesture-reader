@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/gesture",
+      "src/js/",
       "README.md"
     ],
     "exclude": [],
