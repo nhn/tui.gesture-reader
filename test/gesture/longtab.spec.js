@@ -2,7 +2,7 @@ describe('Test gesture reader - longtab case', function() {
     var reader;
 
     beforeEach(function() {
-        reader = new ne.component.Gesture.Reader({
+        reader = new tui.component.Gesture.Reader({
             type: 'longtab',
             longTabTerm: 400
         });

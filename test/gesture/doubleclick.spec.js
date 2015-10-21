@@ -5,7 +5,7 @@ describe('Test gesture reader - doubleclick case', function() {
         pos3;
 
     beforeEach(function() {
-        reader = new ne.component.Gesture.Reader({
+        reader = new tui.component.Gesture.Reader({
             type: 'dbclick'
         });
         pos1 = {

@@ -12,22 +12,22 @@ var DoubleClick = require('./doubleClick');
  * To find out it's flick or click or nothing from event datas.
  * @namespace Reader
  * @example
- * var reader = new ne.component.Gesture.Reader({
+ * var reader = new tui.component.Gesture.Reader({
  *      type : 'flick' || 'longtab' || 'doubleclick'
  * });
  */
-var Reader = ne.util.defineClass(/** @lends Reader.prototype */{
+var Reader = tui.util.defineClass(/** @lends Reader.prototype */{
     /**
      * set options
      * @param {object} option
      */
     init: function(option) {
         if (option.type === 'flick') {
-            ne.util.extend(this, Flick);
+            tui.util.extend(this, Flick);
         } else if (option.type === 'longtab') {
-            ne.util.extend(this, LongTab);
+            tui.util.extend(this, LongTab);
         } else if (option.type === 'dbclick') {
-            ne.util.extend(this, DoubleClick);
+            tui.util.extend(this, DoubleClick);
         }
         this.initialize(option);
     }

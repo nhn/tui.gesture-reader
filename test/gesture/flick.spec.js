@@ -5,7 +5,7 @@ describe('Test gesture reader - flick case', function() {
 
     beforeEach(function() {
         pointList = [];
-        reader = new ne.component.Gesture.Reader({
+        reader = new tui.component.Gesture.Reader({
             type: 'flick'
         });
         event = {},

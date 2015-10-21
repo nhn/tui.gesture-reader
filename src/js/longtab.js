@@ -43,7 +43,7 @@ var LongTab = /** @lends LongTab */{
     startTab: function(pos) {
         this.isLongtabed = false;
         this.longTabPos = pos;
-        this.tabTimer = window.setTimeout(ne.util.bind(function() {
+        this.tabTimer = window.setTimeout(tui.util.bind(function() {
             this.isLongtabed = true;
         }, this), this.longTabTerm);
     },

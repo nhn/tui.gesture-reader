@@ -83,7 +83,7 @@ var DoubleClick = /**@lends DoubleClick */{
      * Set timer to check click term
      */
     setTimer: function() {
-        this.clickTimer = window.setTimeout(ne.util.bind(function() {
+        this.clickTimer = window.setTimeout(tui.util.bind(function() {
             this.startTime = null;
         }, this), this.clickTerm);
     },

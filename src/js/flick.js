@@ -105,7 +105,7 @@ var Flick = /** @lends Flick */{
             direction = slop > 1 ? 'NS' : 'WE';
         }
 
-        direction = ne.util.getDuplicatedChar(direction, cardinalPoint);
+        direction = tui.util.getDuplicatedChar(direction, cardinalPoint);
         return direction;
     },
 
