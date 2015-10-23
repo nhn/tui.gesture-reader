@@ -1,1 +1,1 @@
-ne.util.defineNamespace('ne.component.Gesture.Reader', require('./src/js/reader'));
+tui.util.defineNamespace('tui.component.Gesture.Reader', require('./src/js/reader'));
