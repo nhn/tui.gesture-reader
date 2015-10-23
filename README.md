@@ -13,9 +13,9 @@ Distinguish gesture with event object and position points.
 * DoubleClick : Distinguish double click or not.
 
 ## Documentation
-* **API** : https://nhnent.github.io/fe.component-gesture-reader/latest
-* **Tutorial** : https://github.com/nhnent/fe.component-gesture-reader/wiki/Gesture-Reader-Tutorial
-* **Sample** - https://nhnent.github.io/fe.component-gesture-reader/latest/tutorial-sample1.html
+* **API** : https://nhnent.github.io/tui.component.gesture-reader/latest
+* **Tutorial** : https://github.com/nhnent/tui.component.gesture-reader/wiki/Gesture-Reader-Tutorial
+* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial-sample1.html
 
 
 
@@ -38,13 +38,14 @@ Distinguish gesture with event object and position points.
 * Bower:
    * latest : `bower install ne-component-gesture-reader#master`
    * each version : `bower install ne-component-gesture-reader[#tag]`
-* Download: https://github.com/nhnent/fe.component-gesture-reader
+* Download: https://github.com/nhnent/tui.component.gesture-reader
 
 ## History
 | Version | Description | Date | Developer |
 | ---- | ---- | ---- | ---- |
-| <a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.1.0">1.1.0</a> | Refactoring and change structure, API changed | 2015.05 |NHN ent. FE Dev team. Jein Yi<jein.yi@nhnent.com> |
-| <a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0">1.0.0</a> | Release | 2015.05 | NHN ent. FE Dev team. Jein Yi <jein.yi@nhnent.com> |
+| 1.1.0 | Namespace changed, fe -> tui | 2015.10 | NHN Ent. FE Dev team<dl_javascript@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/tui.component.gesture-reader/1.1.0">1.1.0</a> | Refactoring and change structure, API changed | 2015.05 |NHN ent. FE Dev team. Jein Yi<jein.yi@nhnent.com> |
+| <a href="https://github.nhnent.com/pages/tui.component.gesture-reader/1.0.0">1.0.0</a> | Release | 2015.05 | NHN ent. FE Dev team. Jein Yi <jein.yi@nhnent.com> |
 
 ## LICENSE
 [MIT LICENSE](LICENSE)
