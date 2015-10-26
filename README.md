@@ -36,8 +36,8 @@ Distinguish gesture with event object and position points.
 
 ## Download/Install
 * Bower:
-   * latest : `bower install ne-component-gesture-reader#master`
-   * each version : `bower install ne-component-gesture-reader[#tag]`
+   * latest : `bower install tui-component-gesture-reader#master`
+   * each version : `bower install tui-component-gesture-reader[#tag]`
 * Download: https://github.com/nhnent/tui.component.gesture-reader
 
 ## History
