@@ -20,7 +20,7 @@ Distinguish gesture with event object and position points.
 
 
 ## Dependency
-* ne-code-snippet: ~1.0.4
+* tui-code-snippet: ~1.0.4
 
 ## Test environment
 * PC
