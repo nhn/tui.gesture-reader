@@ -15,7 +15,7 @@ Distinguish gesture with event object and position points.
 ## Documentation
 * **API** : https://nhnent.github.io/tui.component.gesture-reader/latest
 * **Tutorial** : https://github.com/nhnent/tui.component.gesture-reader/wiki/Gesture-Reader-Tutorial
-* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial-sample1.html
+* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial.html
 
 
 
