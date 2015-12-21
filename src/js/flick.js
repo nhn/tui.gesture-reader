@@ -40,8 +40,18 @@ var Flick = /** @lends Flick */{
 
     /**
      * pick event type from eventData
+     * @api
      * @param {object} eventData event Data
      * @return {object}
+     * @example gestureReader.figure({
+     *      list : [{x: 0, y: 0}, {x: 100, y: 100}],
+     *      start: 0,
+     *      end: 50
+     * });
+     * => {
+     *      direction: 'SE',
+     *      isFlick: false
+     * }
      */
     figure: function(eventData) {
         return {
@@ -52,8 +62,11 @@ var Flick = /** @lends Flick */{
 
     /**
      * return direction figured out
+     * @api
      * @param {array} list eventPoint List
      * @returns {string}
+     * @example gestureReader.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
+     * => 'SE';
      */
     getDirection: function(list) {
         var first = list[0],
@@ -65,8 +78,11 @@ var Flick = /** @lends Flick */{
     },
     /**
      * return cardinal points figured out
+     * @api
      * @param {object} first start point
      * @param {object} last end point
+     * @example gestureReader.getDirection({x: 0, y: 0}, {x: 100, y: 100});
+     * => 'SE';
      */
     getCardinalPoints: function(first, last) {
         var verticalDist = first.y - last.y,
@@ -91,10 +107,13 @@ var Flick = /** @lends Flick */{
 
     /**
      * return nearest four cardinal points
+     * @api
      * @param {object} first start point
      * @param {object} last end point
      * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
      * @returns {string}
+     * @example gestureReader.getDirection({x: 0, y: 50}, {x: 100, y: 100});
+     * => 'W';
      */
     getCloseCardinal: function(first, last, cardinalPoint) {
         var slop = (last.y - first.y) / (last.x - first.x),
@@ -111,6 +130,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * extract type of event
+     * @api
      * @param {object} eventData event data
      * @returns {string}
      * @example

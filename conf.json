@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "src/js/",
+      "src/js",
       "README.md"
     ],
     "exclude": [],
@@ -38,8 +38,8 @@
   },
   "opts": {
     "recurse": true,
-    "private": true,
     "destination": "doc",
-    "tutorials": "samples"
+    "tutorials": "samples",
+    "name" : "Gesture Reader"
   }
 }

@@ -38,7 +38,6 @@ var LongTab = /** @lends LongTab */{
     /**
      * Start detect longtab roop, If touchstop event does not fire and position are same, run callback
      * @param {object} pos position to start
-     * @param {function} callback
      */
     startTab: function(pos) {
         this.isLongtabed = false;
@@ -50,8 +49,16 @@ var LongTab = /** @lends LongTab */{
 
     /**
      * Stop detect longtab roop.
+     * @api
      * @param {object} pos A position to end
      * @param {function} callback A callback function
+     * @example
+     * gestureReader.isLongTab({
+     *      x: 100,
+     *      y: 150
+     * }, function() {
+     *      console.log('asdf');
+     * });
      */
     isLongTab: function(pos, callback) {
         var isSafeX,

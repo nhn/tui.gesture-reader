@@ -42,11 +42,12 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Check click or double click
-     * @param {number} timeDist distance from mousedown/touchstart to mouseup/touchend
+     * @api
+     * @param {object} pos distance from mousedown/touchstart to mouseup/touchend
      * @private
      * @returns {*}
      * @example
-     * reader.isDoubleClick({
+     * gestureReader.isDoubleClick({
      *      x: 10,
      *      y: 10
      * });
@@ -70,7 +71,14 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Compare with saved position to safe zone
+     * @api
      * @param {object} pos Position to compare with saved position
+     * @example
+     * gestureReader.isAvailableZone({
+     *      x: 10,
+     *      y: 10
+     * });
+     * => true
      */
     isAvailableZone: function(pos) {
         var isAvailX = Math.abs(this.pos.x - pos.x) < this.maxDist,
