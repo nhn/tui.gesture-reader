@@ -1,3 +1,5 @@
+var Reader = require('../../src/js/reader');
+
 describe('Test gesture reader - flick case', function() {
     var reader,
         event,
@@ -5,7 +7,7 @@ describe('Test gesture reader - flick case', function() {
 
     beforeEach(function() {
         pointList = [];
-        reader = new tui.component.Gesture.Reader({
+        reader = new Reader({
             type: 'flick'
         });
         event = {},

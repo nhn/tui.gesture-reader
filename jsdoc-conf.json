@@ -40,6 +40,7 @@
     "recurse": true,
     "destination": "doc",
     "tutorials": "samples",
-    "name" : "Gesture Reader"
+    "name" : "Gesture Reader",
+    "template": "node_modules/fedoc-template"
   }
 }

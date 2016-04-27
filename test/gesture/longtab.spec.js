@@ -1,8 +1,10 @@
+var Reader = require('../../src/js/reader');
+
 describe('Test gesture reader - longtab case', function() {
     var reader;
 
     beforeEach(function() {
-        reader = new tui.component.Gesture.Reader({
+        reader = new Reader({
             type: 'longtab',
             longTabTerm: 400
         });

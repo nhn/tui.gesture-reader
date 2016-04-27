@@ -1,3 +1,5 @@
+var Reader = require('../../src/js/reader');
+
 describe('Test gesture reader - doubleclick case', function() {
     var reader,
         pos1,
@@ -5,7 +7,7 @@ describe('Test gesture reader - doubleclick case', function() {
         pos3;
 
     beforeEach(function() {
-        reader = new tui.component.Gesture.Reader({
+        reader = new Reader({
             type: 'dbclick'
         });
         pos1 = {
