@@ -52,5 +52,7 @@ doc
 demo
 report
 dist
+[0-9].[0-9].[0-9]
+latest
 
 *.sh
