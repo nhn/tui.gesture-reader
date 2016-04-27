@@ -2,604 +2,92 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Index</title>
+    <title>Gesture Reader API</title>
     <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-fe2.css">
+    <link type="text/css" rel="stylesheet" href="styles/layout.css">
+    <script type="text/javascript" src="scripts/prettify/prettify.js"></script>
+    <script type="text/javascript" src="scripts/prettify/lang-css.js"></script>
+    	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/code-snippet.js"></script>
+	<script type="text/javascript" src="js/tui.doc.js"></script>
+	<script type="text/javascript" src="js/list.js"></script>
+	<script type="text/javascript" src="doubleClick.js.html.js"></script>
+	<script type="text/javascript" src="flick.js.html.js"></script>
+	<script type="text/javascript" src="longtab.js.html.js"></script>
+	<script type="text/javascript" src="reader.js.html.js"></script>
+	<script type="text/javascript" src="main.html.js"></script>
+	<script type="text/javascript" src="DoubleClick.html.js"></script>
+	<script type="text/javascript" src="Flick.html.js"></script>
+	<script type="text/javascript" src="LongTab.html.js"></script>
+	<script type="text/javascript" src="Reader.html.js"></script>
+
 </head>
 <body>
 
 <div id="wrap">
-
-    <div class="header">
-
-        <div class="container-fluid">
-            <h3><a href="index.html">API Documentation</a> <small>FE개발팀</small></h3>
+    <div id="left">
+        <div class="logo">
+            Toast UI Component
         </div>
-
+        <div class="home">
+            <a id="mainLink" href="index.html"><h1>Gesture Reader</h1></a>
+        </div>
+        <div id="search">
+            <input type="text" placeholder="Search" class="searchbox" />
+            <ul class="searchList">
+            </ul>
+        </div>
+        <div id="menu"></div>
     </div>
-
-    <div class="body">
-        <div id="navigation" class="navigation"><h3>Samples</h3><ul class="list samples"><li class="item"><a href="tutorial-sample1.html">Mobile Flick</a></li><li class="item"><a href="tutorial-sample1_1.html">Mobile LongTab</a></li><li class="item"><a href="tutorial-sample2.html">PC Flick</a></li><li class="item"><a href="tutorial-sample3.html">PC DoubleClick</a></li><li class="item"><a href="tutorial-sample4.html">PC LongTab</a></li></ul><h3>Namespaces</h3><ul class="list namespaces"><li class="item" id="ne.component.Gesture.Reader"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.html">Reader</a></span><ul class="sublist methods ne.component.Gesture.Reader"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.html#init">init</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.DoubleClick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.DoubleClick.html">DoubleClick</a></span><ul class="sublist members ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTerm">clickTerm</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clickTimer">clickTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.maxDist">maxDist</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.startTime">startTime</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.DoubleClick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.DoubleClick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.clearTimer">clearTimer</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.isAvailableZone">isAvailableZone</a></li><li><a href="ne.component.Gesture.Reader.DoubleClick.html#.setTimer">setTimer</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.Flick"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.Flick.html">Flick</a></span><ul class="sublist members ne.component.Gesture.Reader.Flick"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.Flick.html#.flickRange">flickRange</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.flickTime">flickTime</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.Flick"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.Flick"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.Flick.html#.figure">figure</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCardinalPoints">getCardinalPoints</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getCloseCardinal">getCloseCardinal</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.getDirection">getDirection</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.Flick.html#.isFlick">isFlick</a></li></ul></li><li class="item" id="ne.component.Gesture.Reader.LongTab"><span class="icon blue static">static</span><span class="title"><a href="ne.component.Gesture.Reader.LongTab.html">LongTab</a></span><ul class="sublist members ne.component.Gesture.Reader.LongTab"><span class="subtitle">Members</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.longTabTerm">longTabTerm</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.minDist">minDist</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.tabTimer">tabTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.type">type</a></li></ul><ul class="sublist division ne.component.Gesture.Reader.LongTab"><li></li></ul><ul class="sublist methods ne.component.Gesture.Reader.LongTab"><span class="subtitle">Methods</span><li><a href="ne.component.Gesture.Reader.LongTab.html#.initialize">initialize</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.isLongTab">isLongTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.resetTimer">resetTimer</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.startTab">startTab</a></li><li><a href="ne.component.Gesture.Reader.LongTab.html#.stopTab">stopTab</a></li></ul></li></ul></div>
-        <div id="main" class="main">
-
-
-
-    
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <section>
-        <article><div class="readme"><h1>Gesture Reader</h1><p>Gesture Reader Component.<br>
-Distinguish gesture with event object and position points.</p>
-<h2>Feature</h2><ul>
-<li>Create reader to distinguish each event.</li>
-<li>Flick : Distinguish flick or not.<ul>
-<li>N/E/S/W</li>
-<li>NE/ES/SW/WN</li>
-<li>isFlick</li>
-</ul>
-</li>
-<li>LongTab : Distinguish logTab or not.</li>
-<li>DoubleClick : Distinguish double click or not.</li>
-</ul>
-<h2>Documentation</h2><ul>
-<li><strong>API</strong> : https://nhnent.github.io/fe.component-gesture-reader/latest</li>
-<li><strong>Tutorial</strong> : https://github.com/nhnent/fe.component-gesture-reader/wiki/Gesture-Reader-Tutorial</li>
-<li><strong>Sample</strong> - https://nhnent.github.io/fe.component-gesture-reader/latest/tutorial-sample1.html</li>
-</ul>
-<h2>Dependency</h2><ul>
-<li>ne-code-snippet: ~1.0.4</li>
-</ul>
-<h2>Test environment</h2><ul>
-<li>PC<ul>
-<li>IE7~11</li>
-<li>Chrome</li>
-<li>Firefox</li>
-</ul>
-</li>
-<li>Mobile<ul>
-<li>Galaxy Note I(Android 2.3), II(Android 4.1)</li>
-<li>Galaxy S III(Android 4.0), IV(Android 4.2.2)</li>
-<li>iPhone 5S(iOS 8)</li>
-<li>Chrome Emulator</li>
-</ul>
-</li>
-</ul>
-<h2>Download/Install</h2><ul>
-<li>Bower:<ul>
-<li>latest : <code>bower install ne-component-gesture-reader#master</code></li>
-<li>each version : <code>bower install ne-component-gesture-reader[#tag]</code></li>
-</ul>
-</li>
-<li>Download: https://github.com/nhnent/fe.component-gesture-reader</li>
-</ul>
-<h2>History</h2><table>
-<thead>
-<tr>
-<th>Version</th>
-<th>Description</th>
-<th>Date</th>
-<th>Developer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.1.0">1.1.0</a></td>
-<td>Refactoring and change structure, API changed</td>
-<td>2015.05</td>
-<td>NHN ent. FE Dev team. Jein Yi<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#58;&#106;&#101;&#105;&#110;&#x2e;&#121;&#105;&#64;&#110;&#x68;&#x6e;&#x65;&#x6e;&#116;&#x2e;&#x63;&#x6f;&#x6d;">&#106;&#101;&#105;&#110;&#x2e;&#121;&#105;&#64;&#110;&#x68;&#x6e;&#x65;&#x6e;&#116;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
-</tr>
-<tr>
-<td><a href="https://github.nhnent.com/pages/fe/component-gesture-reader/1.0.0">1.0.0</a></td>
-<td>Release</td>
-<td>2015.05</td>
-<td>NHN ent. FE Dev team. Jein Yi <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#106;&#x65;&#105;&#110;&#x2e;&#121;&#x69;&#64;&#110;&#x68;&#110;&#101;&#110;&#x74;&#x2e;&#99;&#x6f;&#109;">&#106;&#x65;&#105;&#110;&#x2e;&#121;&#x69;&#64;&#110;&#x68;&#110;&#101;&#110;&#x74;&#x2e;&#99;&#x6f;&#109;</a></td>
-</tr>
-</tbody>
-</table>
-<h2>LICENSE</h2><p><a href="LICENSE">MIT LICENSE</a></p></div></article>
-    </section>
-
-
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-        doubleClick.js
-        
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>discriminate doubleclick event</p></div>
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-        <dd class="tag-source"><ul class="dummy"><li>
-            <a href="doubleClick.js.html">doubleClick.js</a>, <a href="doubleClick.js.html#line1">line 1</a>
-        </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-        
-    
-    </div>
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-        flick.js
-        
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>discriminate flick event</p></div>
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-        <dd class="tag-source"><ul class="dummy"><li>
-            <a href="flick.js.html">flick.js</a>, <a href="flick.js.html#line1">line 1</a>
-        </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-        
-    
-    </div>
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-        longtab.js
-        
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>discriminate long tab event</p></div>
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-        <dd class="tag-source"><ul class="dummy"><li>
-            <a href="longtab.js.html">longtab.js</a>, <a href="longtab.js.html#line1">line 1</a>
-        </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-        
-    
-    </div>
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-
-
-
-
-<section>
-
-<header>
-    
-        <h2>
-        
-        reader.js
-        
-        
-        </h2>
-        
-    
-</header>
-
-<article>
-    
-    <div class="container-overview">
-    
-        
-            <div class="description"><p>discriminate type of touch event</p></div>
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-        <dd class="tag-source"><ul class="dummy"><li>
-            <a href="reader.js.html">reader.js</a>, <a href="reader.js.html#line1">line 1</a>
-        </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-        
-    
-    </div>
-    
-
-    
-
-    
-
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
-
-
-
-</div>
+    <div id="content" class="body">
+        <div id="pagetop"></div>
+        <div id="contentTab">
+            <ul>
+                <li class="tabmenu info on">API</li>
+                <li class="tabmenu code">Code</li>
+                <li class="tabmenu sample">Sample</li>
+            </ul>
+        </div>
+        <div id="contentBody"></div>
+        <div id="contentCode"></div>
         <div class="clearfix"></div>
     </div>
 
 </div>
-<script>
-(function() {
-// 영역 height 설정
-var height = (window.innerHeight || document.documentElement.clientHeight || document.getElementByTagName('body')[0].clientHeight) - 50;
-var navigation = document.getElementById('navigation');
-var main = document.getElementById('main');
-navigation.style.height = height + 'px';
-main.style.height = height + 'px';
+<footer class="footer">
+    <div class="f_wrap">
+        <div class="logo">
+            Toast UI Component
+        </div>
+        <copyright class="copyright">
+            NHN Entertainment. Frontend Development Team.
+        </copyright>
+    </div>
+</footer>
+<script type="text/javascript">
+    $('#mainLink').attr({
+        href: location.href.replace(location.hash, '')
+    });
 
-// IE 7,8을 위한 getElementsByClassName 구현
-var getElementsByClassName = function(className, parentElement) {
-	if(document.getElementsByClassName) {
-		return (parentElement || document).getElementsByClassName(className);
-	}
+    var ui = new tui.doc({
+        element: {
+            menu: $('#menu'),
+            content: $('#contentBody'),
+            code: $('#contentCode'),
+            tab: $('#contentTab'),
+            search: $('#search')
+        },
+        data: {
+            content: fedoc.content['main.html'],
+            menu: fedoc.lnb
+        }
+    });
 
-    var regEx = new RegExp('(^| )'+className+'( |$)');
-	var nodes = new Array();
-    var elements = (parentElement || document.body).getElementsByTagName("*");
-    for(var i = 0, len = elements.length; i < len ; i++) {
-        if(regEx.test(elements[i].className)) {
-			nodes.push(elements[i]);
-		}
-	}
-	elements = null;
-    return nodes;
-}
-
-// url 파싱후 해당 카테고리만 display:block 처리
-var url = location.href;
-var path = url.lastIndexOf('/');
-var fileName = url.substring(path+1);
-var fullName = fileName.split('.');
-fullName.length -= 1;
-fullName = fullName.join('.');
-fullName = fullName.split('-');
-fullName = fullName[fullName.length - 1];
-var lnbList = getElementsByClassName(fullName);
-if(lnbList.length && lnbList.length > 0) {
-    for(var i = 0, len = lnbList.length; i < len; i++) {
-        lnbList[i].className += ' selected';
+    if (tui.util.isEmpty(fedoc.lnb.tutorials)) {
+        $('#content #contentTab .tabmenu.sample').hide();
     }
-}
-
-var title = document.getElementById(fullName);
-if(title) {
-    title.className += ' selected';
-    title.innerHTML = '<span class="arrow">▶</span>' + title.innerHTML;
-
-    var static = getElementsByClassName('static', title);
-    if(static) {
-        static[0].className += ' selected';
-    }
-}
-})();
 </script>
-<script type="text/javascript" src="scripts/prettify/prettify.js"></script>
-<script type="text/javascript" src="scripts/prettify/lang-css.js"></script>
-<script type="text/javascript">prettyPrint();</script>
-<script type="text/javascript" src="scripts/linenumber.js"></script>
 </body>
 </html>
