@@ -26,8 +26,7 @@ gulp.task('connect', function() {
 
 gulp.task('bundle', function() {
     var b = browserify({
-        entries: 'index.js',
-        debug: true
+        entries: 'index.js'
     });
 
     return b.bundle()
