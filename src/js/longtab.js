@@ -5,7 +5,7 @@
 
 /**
  * Modules of Discrimination longtab
- * @namespace LongTab
+ * @ignore
  */
 var LongTab = /** @lends LongTab */{
     /**
@@ -49,7 +49,7 @@ var LongTab = /** @lends LongTab */{
 
     /**
      * Stop detect longtab roop.
-     * @api
+     * @memberOf Reader#
      * @param {object} pos A position to end
      * @param {function} callback A callback function
      * @example

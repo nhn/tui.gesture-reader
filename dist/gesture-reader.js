@@ -1,3 +1,9 @@
+/**
+ * tui-component-gesture-reader
+ * @author NHNEnt FE Development Team <dl_javascript@nhnent.com>
+ * @version v1.1.0
+ * @license MIT
+ */
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Gesture = tui.util.defineNamespace('tui.component.Gesture');
 Gesture.Reader = require('./src/js/reader');
@@ -10,9 +16,9 @@ Gesture.Reader = require('./src/js/reader');
 
 /**
  * Modules of Discrimination double click
- * @namespace DoubleClick
+ * @ignore
  */
-var DoubleClick = /**@lends DoubleClick */{
+var DoubleClick = {
     /**
      * Timer for check click twice in time
      */
@@ -47,7 +53,6 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Check click or double click
-     * @api
      * @param {object} pos distance from mousedown/touchstart to mouseup/touchend
      * @private
      * @returns {*}
@@ -76,7 +81,7 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Compare with saved position to safe zone
-     * @api
+     * @memberOf Reader#
      * @param {object} pos Position to compare with saved position
      * @example
      * gestureReader.isAvailableZone({
@@ -119,7 +124,7 @@ module.exports = DoubleClick;
 
 /**
  * Modules of Discrimination flick
- * @namespace Flick
+ * @ignore
  */
 var Flick = /** @lends Flick */{
     /**
@@ -154,7 +159,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * pick event type from eventData
-     * @api
+     * @memberOf Reader#
      * @param {object} eventData event Data
      * @return {object}
      * @example gestureReader.figure({
@@ -176,7 +181,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * return direction figured out
-     * @api
+     * @memberOf Reader#
      * @param {array} list eventPoint List
      * @returns {string}
      * @example gestureReader.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
@@ -192,7 +197,7 @@ var Flick = /** @lends Flick */{
     },
     /**
      * return cardinal points figured out
-     * @api
+     * @memberOf Reader#
      * @param {object} first start point
      * @param {object} last end point
      * @example gestureReader.getDirection({x: 0, y: 0}, {x: 100, y: 100});
@@ -221,7 +226,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * return nearest four cardinal points
-     * @api
+     * @memberOf Reader#
      * @param {object} first start point
      * @param {object} last end point
      * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
@@ -244,7 +249,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * extract type of event
-     * @api
+     * @memberOf Reader#
      * @param {object} eventData event data
      * @returns {string}
      * @example
@@ -294,7 +299,7 @@ module.exports = Flick;
 
 /**
  * Modules of Discrimination longtab
- * @namespace LongTab
+ * @ignore
  */
 var LongTab = /** @lends LongTab */{
     /**
@@ -338,7 +343,7 @@ var LongTab = /** @lends LongTab */{
 
     /**
      * Stop detect longtab roop.
-     * @api
+     * @memberOf Reader#
      * @param {object} pos A position to end
      * @param {function} callback A callback function
      * @example
@@ -399,16 +404,29 @@ var DoubleClick = require('./doubleClick');
 
 /**
  * To find out it's flick or click or nothing from event datas.
- * @namespace Reader
+ * @class Reader
+ * @param {object} option
+ *  @param {string} option.type - 'flick', 'longtab', 'dbclick'
+ *  @param {number} [option.clickTerm] (DoubleClick) Available time distance between first and second click event.
+ *  @param {number} [option.maxDist] (DoubleClick) Available movement distance
+ *  @param {number} [option.flickTime] (Flick) If in this time, do not check move distance
+ *  @param {number} [option.flickRange] (Flick) If not in time, compare move distance with flick ragne.
+ *  @param {number} [option.longTabTerm] (LongTab) Term for checking longtab
+ *  @param {number} [option.minDist] (Flick, LongTab) Minimum distance for check available movement.
  * @example
  * var reader = new tui.component.Gesture.Reader({
- *      type : 'flick' || 'longtab' || 'doubleclick'
+ *      type : 'flick'
  * });
+ * @tutorial sample1
+ * @tutorial sample1_1
+ * @tutorial sample2
+ * @tutorial sample3
+ * @tutorial sample4
  */
 var Reader = tui.util.defineClass(/** @lends Reader.prototype */{
     /**
      * set options
-     * @param {object} option
+     * @ignore
      */
     init: function(option) {
         if (option.type === 'flick') {

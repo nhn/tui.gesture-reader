@@ -8,11 +8,22 @@ var buffer = require('vinyl-buffer');
 var KarmaServer = require('karma').Server;
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var filename = require('./package.json').name.replace('component-', '');
+var header = require('gulp-header');
+var pkg = require('./package.json');
+var filename = pkg.name.replace('tui-component-', '');
+var banner = ['/**',
+    ' * <%= pkg.name %>',
+    ' * @author <%= pkg.author %>',
+    ' * @version v<%= pkg.version %>',
+    ' * @license <%= pkg.license %>',
+    ' */',
+    ''].join('\n');
 
-gulp.task('test', function() {
+var BUNDLE_PATH = 'dist/';
+
+gulp.task('test', function(done) {
     new KarmaServer({
-        configFile: path.join(__dirname, 'karma.conf.js'),
+        configFile: path.join(__dirname, 'karma.conf.private.js'),
         singleRun: true
     }, done).start();
 });
@@ -21,7 +32,7 @@ gulp.task('connect', function() {
     connect.server({
         livereload: true
     });
-    gulp.watch(['./src/**/*.js', './index.js', './demo/**/*.html'], ['bundle']);
+    gulp.watch(['./src/**/*.js', './index.js'], ['bundle']);
 });
 
 gulp.task('bundle', function() {
@@ -36,21 +47,16 @@ gulp.task('bundle', function() {
         })
         .pipe(source(filename + '.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('./'));
+        .pipe(header(banner, { pkg : pkg } ))
+        .pipe(gulp.dest(BUNDLE_PATH));
 });
 
 gulp.task('compress', ['bundle'], function() {
-    gulp.src(filename + '.js')
+    gulp.src(BUNDLE_PATH + filename + '.js')
         .pipe(uglify())
         .pipe(concat(filename + '.min.js'))
-        .pipe(gulp.dest('./'));
-
+        .pipe(header(banner, { pkg : pkg } ))
+        .pipe(gulp.dest(BUNDLE_PATH));
 });
 
-gulp.task('concat', ['compress'], function() {
-    gulp.src(filename + '.js')
-        .pipe(concat(filename + '.js'))
-        .pipe(gulp.dest('./samples/js/'));
-});
-
-gulp.task('default', ['bundle', 'compress', 'concat']);
+gulp.task('default', ['bundle', 'compress']);
