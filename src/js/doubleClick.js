@@ -5,9 +5,9 @@
 
 /**
  * Modules of Discrimination double click
- * @namespace DoubleClick
+ * @ignore
  */
-var DoubleClick = /**@lends DoubleClick */{
+var DoubleClick = {
     /**
      * Timer for check click twice in time
      */
@@ -42,7 +42,6 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Check click or double click
-     * @api
      * @param {object} pos distance from mousedown/touchstart to mouseup/touchend
      * @private
      * @returns {*}
@@ -71,7 +70,7 @@ var DoubleClick = /**@lends DoubleClick */{
 
     /**
      * Compare with saved position to safe zone
-     * @api
+     * @memberOf Reader#
      * @param {object} pos Position to compare with saved position
      * @example
      * gestureReader.isAvailableZone({

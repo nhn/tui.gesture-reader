@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <title></title>
-    <script type="text/javascript" src="js/code-snippet.js"></script>
-    <script type="text/javascript" src="js/gesture-reader.js"></script>
     <style type="text/css">
         #detect {
             width:500px; height:600px; background-color:hotpink;
@@ -20,13 +18,17 @@
     </style>
 </head>
 <body>
+<div class="code-html">
     <div id="detect">
     </div>
     <div class="box">
         <span id="direction">Direction : <em></em></span>
         <span id="type">Type : <em></em></span>
     </div>
-<script type="text/javascript">
+</div>
+<script type="text/javascript" src="https://cdn.rawgit.com/nhnent/tui.code-snippet/1.2.1/code-snippet.js"></script>
+<script type="text/javascript" src="../dist/gesture-reader.js"></script>
+<script type="text/javascript" class="code-js">
     var DIRECTION = {
         W: 'WEST',
         N: 'NORTH',
@@ -82,7 +84,6 @@
             }
         }, 300);
     }, false);
-
 </script>
 </body>
 </html>

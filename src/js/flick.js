@@ -5,7 +5,7 @@
 
 /**
  * Modules of Discrimination flick
- * @namespace Flick
+ * @ignore
  */
 var Flick = /** @lends Flick */{
     /**
@@ -40,7 +40,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * pick event type from eventData
-     * @api
+     * @memberOf Reader#
      * @param {object} eventData event Data
      * @return {object}
      * @example gestureReader.figure({
@@ -62,7 +62,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * return direction figured out
-     * @api
+     * @memberOf Reader#
      * @param {array} list eventPoint List
      * @returns {string}
      * @example gestureReader.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
@@ -78,7 +78,7 @@ var Flick = /** @lends Flick */{
     },
     /**
      * return cardinal points figured out
-     * @api
+     * @memberOf Reader#
      * @param {object} first start point
      * @param {object} last end point
      * @example gestureReader.getDirection({x: 0, y: 0}, {x: 100, y: 100});
@@ -107,7 +107,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * return nearest four cardinal points
-     * @api
+     * @memberOf Reader#
      * @param {object} first start point
      * @param {object} last end point
      * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
@@ -130,7 +130,7 @@ var Flick = /** @lends Flick */{
 
     /**
      * extract type of event
-     * @api
+     * @memberOf Reader#
      * @param {object} eventData event data
      * @returns {string}
      * @example

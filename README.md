@@ -15,16 +15,14 @@ Distinguish gesture with event object and position points.
 ## Documentation
 * **API** : https://nhnent.github.io/tui.component.gesture-reader/latest
 * **Tutorial** : https://github.com/nhnent/tui.component.gesture-reader/wiki/Gesture-Reader-Tutorial
-* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial.html
-
-
+* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial-sample1.html
 
 ## Dependency
-* tui-code-snippet: ~1.0.4
+* tui-code-snippet: ~1.1.0
 
 ## Test environment
 * PC
-	* IE7~11
+	* IE8~11
 	* Chrome
 	* Firefox
 * Mobile
@@ -33,19 +31,15 @@ Distinguish gesture with event object and position points.
 	* iPhone 5S(iOS 8)
 	* Chrome Emulator
 
-
 ## Download/Install
 * Bower:
-   * latest : `bower install tui-component-gesture-reader#master`
+   * latest : `bower install tui-component-gesture-reader`
    * each version : `bower install tui-component-gesture-reader[#tag]`
 * Download: https://github.com/nhnent/tui.component.gesture-reader
 
-## History
-| Version | Description | Date | Developer |
-| ---- | ---- | ---- | ---- |
-| 1.1.0 | Namespace changed, fe -> tui | 2015.10 | NHN Ent. FE Dev team<dl_javascript@nhnent.com> |
-| <a href="https://github.nhnent.com/pages/tui.component.gesture-reader/1.1.0">1.1.0</a> | Refactoring and change structure, API changed | 2015.05 |NHN ent. FE Dev team. Jein Yi<jein.yi@nhnent.com> |
-| <a href="https://github.nhnent.com/pages/tui.component.gesture-reader/1.0.0">1.0.0</a> | Release | 2015.05 | NHN ent. FE Dev team. Jein Yi <jein.yi@nhnent.com> |
-
 ## LICENSE
-[MIT LICENSE](LICENSE)
+[MIT LICENSE](https://github.com/nhnent/tui.component.gesture-reader/blob/master/LICENSE)
+
+## Sponsor
+* <img src="https://cloud.githubusercontent.com/assets/12269563/12287774/8cf4d2c0-ba12-11e5-9fa8-0a9c452cca05.png" height="30"><br>
+ [BrowserStack](https://www.browserstack.com/) is a cloud based cross browser testing tool
