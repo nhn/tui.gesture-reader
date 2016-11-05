@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gesture Reader</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+        <img src="img/toast-ui.png" width="100%" height="100%">
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Gesture Reader</a></h1>
+        
+            <span class="version">v1.1.0</span>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    <ol class="lnb-tab">
+        <li id="api-tab">
+            <a href="#"><h4>API</h4></a>
+        </li>
+        <li id="examples-tab">
+            <a href="#"><h4>Examples</h4></a>
+        </li>
+    </ol>
+    <div class="lnb-examples hidden"><h3>Examples</h3><ul><li><a href="tutorial-sample1.html">Mobile Flick</a><div class="hidden" id="sample1_sub"></div></li><li><a href="tutorial-sample1_1.html">Mobile LongTab</a><div class="hidden" id="sample1_1_sub"></div></li><li><a href="tutorial-sample2.html">PC Flick</a><div class="hidden" id="sample2_sub"></div></li><li><a href="tutorial-sample3.html">PC DoubleClick</a><div class="hidden" id="sample3_sub"></div></li><li><a href="tutorial-sample4.html">PC LongTab</a><div class="hidden" id="sample4_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="Reader.html">Reader</a><div class="hidden" id="Reader_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="DoubleClick.html">DoubleClick</a><div class="hidden" id="DoubleClick_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="DoubleClick.html#.clickTerm">clickTerm</a></li><li><a href="DoubleClick.html#.clickTimer">clickTimer</a></li><li><a href="DoubleClick.html#.maxDist">maxDist</a></li><li><a href="DoubleClick.html#.startTime">startTime</a></li><li><a href="DoubleClick.html#.type">type</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="DoubleClick.html#.clearTimer">clearTimer</a></li><li><a href="DoubleClick.html#.initialize">initialize</a></li><li><a href="DoubleClick.html#.isAvailableZone">isAvailableZone</a></li><li><a href="DoubleClick.html#.setTimer">setTimer</a></li></ul></div></li><li><a href="Flick.html">Flick</a><div class="hidden" id="Flick_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Flick.html#.flickRange">flickRange</a></li><li><a href="Flick.html#.flickTime">flickTime</a></li><li><a href="Flick.html#.minDist">minDist</a></li><li><a href="Flick.html#.type">type</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Flick.html#.figure">figure</a></li><li><a href="Flick.html#.getCardinalPoints">getCardinalPoints</a></li><li><a href="Flick.html#.getCloseCardinal">getCloseCardinal</a></li><li><a href="Flick.html#.getDirection">getDirection</a></li><li><a href="Flick.html#.initialize">initialize</a></li><li><a href="Flick.html#.isFlick">isFlick</a></li></ul></div></li><li><a href="LongTab.html">LongTab</a><div class="hidden" id="LongTab_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="LongTab.html#.longTabTerm">longTabTerm</a></li><li><a href="LongTab.html#.minDist">minDist</a></li><li><a href="LongTab.html#.tabTimer">tabTimer</a></li><li><a href="LongTab.html#.type">type</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="LongTab.html#.initialize">initialize</a></li><li><a href="LongTab.html#.isLongTab">isLongTab</a></li><li><a href="LongTab.html#.resetTimer">resetTimer</a></li><li><a href="LongTab.html#.startTab">startTab</a></li><li><a href="LongTab.html#.stopTab">stopTab</a></li></ul></div></li><li><a href="tui.component.Gesture.html">tui.component.Gesture</a><div class="hidden" id="tui.component.Gesture_sub"></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileoverview discriminate flick event
+ * @author NHN entertainment FE dev team. Jein Yi&lt;jein.yi@nhnent.com>
+ */
+
+/**
+ * Modules of Discrimination flick
+ * @namespace Flick
+ */
+var Flick = /** @lends Flick */{
+    /**
+     * time is considered flick.
+     */
+    flickTime: 100,
+    /**
+     * width is considered flick.
+     */
+    flickRange: 300,
+    /**
+     * width is considered moving.
+     */
+    minDist: 10,
+    /**
+     * Reader type
+     */
+    type: 'flick',
+
+    /**
+     * Initialize Flicking
+     * @param {object} option Flick options
+     *  @param {number} [option.flickTime] Flick time, if in this time, do not check move distance
+     *  @param {number} [option.flickRange] Flick range, if not in time, compare move distance with flick ragne.
+     *  @param {number} [option.minDist] Minimum distance for check available movement.
+     */
+    initialize: function(option) {
+        this.flickTime = option.flickTime || this.flickTime;
+        this.flickRange = option.flickRange || this.flickRange;
+        this.minDist = option.minDist || this.minDist;
+    },
+
+    /**
+     * pick event type from eventData
+     * @api
+     * @param {object} eventData event Data
+     * @return {object}
+     * @example gestureReader.figure({
+     *      list : [{x: 0, y: 0}, {x: 100, y: 100}],
+     *      start: 0,
+     *      end: 50
+     * });
+     * => {
+     *      direction: 'SE',
+     *      isFlick: false
+     * }
+     */
+    figure: function(eventData) {
+        return {
+            direction : this.getDirection(eventData.list),
+            isFlick: this.isFlick(eventData)
+        }
+    },
+
+    /**
+     * return direction figured out
+     * @api
+     * @param {array} list eventPoint List
+     * @returns {string}
+     * @example gestureReader.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
+     * => 'SE';
+     */
+    getDirection: function(list) {
+        var first = list[0],
+            final = list[list.length-1],
+            cardinalPoint = this.getCardinalPoints(first, final),
+            res = this.getCloseCardinal(first, final, cardinalPoint);
+
+        return res;
+    },
+    /**
+     * return cardinal points figured out
+     * @api
+     * @param {object} first start point
+     * @param {object} last end point
+     * @example gestureReader.getDirection({x: 0, y: 0}, {x: 100, y: 100});
+     * => 'SE';
+     */
+    getCardinalPoints: function(first, last) {
+        var verticalDist = first.y - last.y,
+            horizonDist = first.x - last.x,
+            NS = '',
+            WE = '';
+
+        if (verticalDist &lt; 0) {
+            NS = 'S';
+        } else if (verticalDist > 0) {
+            NS = 'N';
+        }
+
+        if (horizonDist &lt; 0) {
+            WE = 'E';
+        } else if (horizonDist > 0) {
+            WE = 'W';
+        }
+
+        return NS+WE;
+    },
+
+    /**
+     * return nearest four cardinal points
+     * @api
+     * @param {object} first start point
+     * @param {object} last end point
+     * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
+     * @returns {string}
+     * @example gestureReader.getDirection({x: 0, y: 50}, {x: 100, y: 100});
+     * => 'W';
+     */
+    getCloseCardinal: function(first, last, cardinalPoint) {
+        var slop = (last.y - first.y) / (last.x - first.x),
+            direction;
+        if (slop &lt; 0) {
+            direction = slop &lt; -1 ? 'NS' : 'WE';
+        } else {
+            direction = slop > 1 ? 'NS' : 'WE';
+        }
+
+        direction = tui.util.getDuplicatedChar(direction, cardinalPoint);
+        return direction;
+    },
+
+    /**
+     * extract type of event
+     * @api
+     * @param {object} eventData event data
+     * @returns {string}
+     * @example
+     * reader.isFlick({
+     *      start: 1000,
+     *      end: 1100,
+     *      list: [
+     *            {
+     *                x: 10,
+     *                y: 10
+     *            },
+     *            {
+     *                x: 11,
+     *                y: 11
+     *            }
+     *      ]
+     * });
+     */
+    isFlick: function(eventData) {
+        var start = eventData.start,
+            end = eventData.end,
+            list = eventData.list,
+            first = list[0],
+            final = list[list.length - 1],
+            timeDist = end - start,
+            xDist = Math.abs(first.x - final.x),
+            yDist = Math.abs(first.y - final.y),
+            isFlick;
+
+        if (timeDist &lt; this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
+            isFlick = true;
+        } else {
+            isFlick = false;
+        }
+
+        return isFlick;
+    }
+};
+
+module.exports = Flick;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var element = document.getElementById(id); // do not use jquery selector
+
+        $(element).removeClass('hidden');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
