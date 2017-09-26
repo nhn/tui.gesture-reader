@@ -1,14 +1,13 @@
-var Reader = require('../../src/js/reader');
+'use strict';
+
+var Reader = require('../src/js/reader');
 
 describe('Test gesture reader - doubleclick case', function() {
-    var reader,
-        pos1,
-        pos2,
-        pos3;
+    var reader, pos1, pos2, pos3;
 
     beforeEach(function() {
         reader = new Reader({
-            type: 'dbclick'
+            type: 'dblclick'
         });
         pos1 = {
             x: 10,
@@ -21,11 +20,11 @@ describe('Test gesture reader - doubleclick case', function() {
         pos3 = {
             x: 25,
             y: 25
-        }
+        };
     });
 
-    it('reader.dbclick is created', function() {
-        expect(reader.type).toBe('dbclick');
+    it('reader.dblclick is created', function() {
+        expect(reader.type).toBe('dblclick');
     });
 
     it('isAvailableZone', function() {

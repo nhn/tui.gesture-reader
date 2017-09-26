@@ -1,10 +1,14 @@
 /**
- * @fileoverview discriminate doubleclick event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
+ * @fileoverview Discriminate doubleclick event
+ * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
  */
 
+'use strict';
+
+var snippet = require('tui-code-snippet');
+
 /**
- * Modules of Discrimination double click
+ * Modules of discrimination double click
  * @ignore
  */
 var DoubleClick = {
@@ -12,18 +16,22 @@ var DoubleClick = {
      * Timer for check click twice in time
      */
     clickTimer: null,
+
     /**
      * The type of reader
      */
-    type: 'dbclick',
+    type: 'dblclick',
+
     /**
      * Maximum safe distance
      */
     maxDist: 10,
+
     /**
      * Available double click term
      */
     clickTerm: 200,
+
     /**
      * First click timestamp
      */
@@ -31,30 +39,31 @@ var DoubleClick = {
 
     /**
      * Initailize DoubleClick Reader
-     * @param {object} option
-     *  @param {number} [option.clickTerm] Available time distance between first and second click event.
-     *  @param {number} [option.maxDist] Available movement distance
+     * @param {object} options - Click options
+     *     @param {number} [options.clickTerm] - Available time distance between first and second click event.
+     *     @param {number} [options.maxDist] - Available movement distance
      */
-    initialize: function(option) {
-        this.clickTerm = option.clickTerm || this.clickTerm;
-        this.maxDist = option.maxDist || this.maxDist;
+    initialize: function(options) {
+        this.clickTerm = options.clickTerm || this.clickTerm;
+        this.maxDist = options.maxDist || this.maxDist;
     },
 
     /**
      * Check click or double click
-     * @param {object} pos distance from mousedown/touchstart to mouseup/touchend
-     * @private
+     * @memberof Reader#
+     * @param {object} pos - Distance from mousedown/touchstart to mouseup/touchend
      * @returns {*}
      * @example
-     * gestureReader.isDoubleClick({
+     * instance.isDoubleClick({
      *      x: 10,
      *      y: 10
      * });
      */
     isDoubleClick: function(pos) {
-        var time = new Date(),
-            start = this.startTime,
-            isDoubleClick;
+        var time = new Date();
+        var start = this.startTime;
+        var isDoubleClick;
+
         if (start && this.isAvailableZone(pos)) {
             this.clearTimer();
             this.startTime = null;
@@ -65,23 +74,24 @@ var DoubleClick = {
             this.startTime = time;
             isDoubleClick = false;
         }
+
         return isDoubleClick;
     },
 
     /**
      * Compare with saved position to safe zone
-     * @memberOf Reader#
-     * @param {object} pos Position to compare with saved position
+     * @memberof Reader#
+     * @param {object} pos - Position to compare with saved position
+     * @returns {boolean} State of available zone
      * @example
-     * gestureReader.isAvailableZone({
+     * instance.isAvailableZone({
      *      x: 10,
      *      y: 10
      * });
-     * => true
      */
     isAvailableZone: function(pos) {
-        var isAvailX = Math.abs(this.pos.x - pos.x) < this.maxDist,
-            isAvailY = Math.abs(this.pos.y - pos.y) < this.maxDist;
+        var isAvailX = Math.abs(this.pos.x - pos.x) < this.maxDist;
+        var isAvailY = Math.abs(this.pos.y - pos.y) < this.maxDist;
 
         return isAvailX && isAvailY;
     },
@@ -90,7 +100,7 @@ var DoubleClick = {
      * Set timer to check click term
      */
     setTimer: function() {
-        this.clickTimer = window.setTimeout(tui.util.bind(function() {
+        this.clickTimer = window.setTimeout(snippet.bind(function() {
             this.startTime = null;
         }, this), this.clickTerm);
     },

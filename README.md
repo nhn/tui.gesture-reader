@@ -1,45 +1,76 @@
-Gesture Reader
-===============
-Gesture Reader Component.<br>
-Distinguish gesture with event object and position points.
+# GestureReader
+Distinguish gesture with event object and position points
 
 ## Feature
-* Create reader to distinguish each event.
-* Flick : Distinguish flick or not.
+* Create reader to distinguish each event
+* Flick : Distinguish flick or not
 	* N/E/S/W
 	* NE/ES/SW/WN
 	* isFlick
-* LongTab : Distinguish logTab or not.
-* DoubleClick : Distinguish double click or not.
+* LongTab : Distinguish logTab or not
+* DoubleClick : Distinguish double click or not
 
 ## Documentation
-* **API** : https://nhnent.github.io/tui.component.gesture-reader/latest
-* **Tutorial** : https://github.com/nhnent/tui.component.gesture-reader/wiki/Gesture-Reader-Tutorial
-* **Sample** - https://nhnent.github.io/tui.component.gesture-reader/latest/tutorial-sample1.html
+* **API** : [https://nhnent.github.io/tui.gesture-reader/latest](https://nhnent.github.io/tui.gesture-reader/latest)
+* **Tutorial** : [https://github.com/nhnent/tui.gesture-reader/wiki](https://github.com/nhnent/tui.gesture-reader/wiki)
+* **Example** :
+[https://nhnent.github.io/tui.gesture-reader/latest/tutorial-example01-basic.html](https://nhnent.github.io/tui.gesture-reader/latest/tutorial-example01-basic.html)
 
 ## Dependency
-* tui-code-snippet: ~1.1.0
+* [tui-code-snippet](https://github.com/nhnent/tui.code-snippet) >=1.2.5
 
-## Test environment
-* PC
-	* IE8~11
-	* Chrome
-	* Firefox
-* Mobile
-	* Galaxy Note I(Android 2.3), II(Android 4.1)
-	* Galaxy S III(Android 4.0), IV(Android 4.2.2)
-	* iPhone 5S(iOS 8)
-	* Chrome Emulator
+## Test Environment
+### PC
+* IE8~11
+* Edge
+* Chrome
+* Firefox
+* Safari
 
-## Download/Install
-* Bower:
-   * latest : `bower install tui-component-gesture-reader`
-   * each version : `bower install tui-component-gesture-reader[#tag]`
-* Download: https://github.com/nhnent/tui.component.gesture-reader
+## Usage
+### Use `npm`
 
-## LICENSE
-[MIT LICENSE](https://github.com/nhnent/tui.component.gesture-reader/blob/master/LICENSE)
+Install the latest version using `npm` command:
 
-## Sponsor
-* <img src="https://cloud.githubusercontent.com/assets/12269563/12287774/8cf4d2c0-ba12-11e5-9fa8-0a9c452cca05.png" height="30"><br>
- [BrowserStack](https://www.browserstack.com/) is a cloud based cross browser testing tool
+```
+$ npm install tui-gesture-reader --save
+```
+
+or want to install the each version:
+
+```
+$ npm install tui-gesture-reader@<version> --save
+```
+
+To access as module format in your code:
+
+```javascript
+var GestureReader = require('tui-gesture-reader');
+var instance = new GestureReader(...);
+```
+
+### Use `bower`
+Install the latest version using `bower` command:
+
+```
+$ bower install tui-gesture-reader
+```
+
+or want to install the each version:
+
+```
+$ bower install tui-gesture-reader#<tag>
+```
+
+To access as namespace format in your code:
+
+```javascript
+var instance = new tui.GestureReader(...);
+```
+
+### Download
+* [Download bundle files from `dist` folder](https://github.com/nhnent/tui.gesture-reader/tree/production/dist)
+* [Download all sources for each version](https://github.com/nhnent/tui.gesture-reader/releases)
+
+## License
+[MIT LICENSE](https://github.com/nhnent/tui.gesture-reader/blob/master/LICENSE)

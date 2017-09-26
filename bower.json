@@ -1,26 +1,25 @@
 {
-  "name": "tui-component-gesture-reader",
-  "authors": [
-    "NHN Ent. Frontend Development Lab <dl_javascript@nhnent.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "src",
-    "server",
-    "data.js",
-    "Gruntfile.js",
-    "conf.json",
-    "karma.conf.js",
-    "package.json",
-    ".gitignore",
-    "samples"
-  ],
-  "dependencies": {
-    "tui-code-snippet" : "~1.1.0"
-  }
+    "name": "tui-gesture-reader",
+    "authors": [
+        "NHNent. FE Development Lab <dl_javascript@nhnent.com>"
+    ],
+    "main": [
+        "dist/tui-gesture-reader.js"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "examples",
+        "src",
+        "test",
+        "jsdoc.conf.json",
+        "karma.conf.js",
+        "webpack.config.js",
+        "package.json"
+    ],
+    "dependencies": {
+        "tui-code-snippet": "^1.2.5"
+    }
 }
