@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: reader.js | GestureReader</title>
+    <title>Tutorial: 2. Using DoubleClick | GestureReader</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,60 +52,122 @@
 <div class="main" id="main">
     
 
+<section>
+    <header>
+        
 
+        <h2>2. Using DoubleClick</h2>
+    </header>
 
     
-    <section>
+        
+
+        <ul id="example-nav" class="nav nav-tabs">
+            <li role="presentation" id="example-result-btn" class="active" onclick="showResult()">
+                <a href="#">Result</a>
+            </li>
+            <li role="presentation" id="example-js-btn" class="" onclick="showJs()">
+                <a href="#">JS</a>
+            </li>
+            <li role="presentation" id="example-html-btn" class="" onclick="showHtml()">
+                <a href="#">HTML</a>
+            </li>
+        </ul>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Discriminate type of touch event
- * @author NHN Ent. FE dev Lab. &lt;dl_javascript@nhnent.com>
- */
+            
+            <iframe id="example-result" width="100%" height="800" frameborder="0" src=tutorials/example02-dblclick.html></iframe>
+            <div id="example-js" class="hidden"><pre class="prettyprint source">
 
-'use strict';
+            var detect = document.getElementById('detect');
+            var direction = document.getElementById('direction');
+            var type = document.getElementById('type');
 
-var snippet = require('tui-code-snippet');
+            var info = {};
 
-var Flick = require('./flick');
-var LongTab = require('./longtab');
-var DoubleClick = require('./doubleClick');
+            var gestureReader = new tui.GestureReader({
+                type: 'dblclick',
+                clickTerm: 600
+            });
 
-/**
- * To find out it's flick or click or nothing from event datas.
- * @class Reader
- * @param {object} options
- *     @param {string} options.type - 'flick', 'longtab', 'dblclick'
- *     @param {number} [options.clickTerm] - (DoubleClick) Available time distance between first and second click event.
- *     @param {number} [options.maxDist] - (DoubleClick) Available movement distance
- *     @param {number} [options.flickTime] - (Flick) If in this time, do not check move distance
- *     @param {number} [options.flickRange] - (Flick) If not in time, compare move distance with flick ragne.
- *     @param {number} [options.longTabTerm] - (LongTab) Term for checking longtab
- *     @param {number} [options.minDist] - (Flick, LongTab) Minimum distance for check available movement.
- * @example
- * var GestureReader = tui.GestureReader; // or require('tui-gesture-reader');
- * var instance = new GestureReader({
- *      type: 'flick'
- * });
- */
-var Reader = snippet.defineClass(/** @lends Reader.prototype */{
-    init: function(options) {
-        if (options.type === 'flick') {
-            snippet.extend(this, Flick);
-        } else if (options.type === 'longtab') {
-            snippet.extend(this, LongTab);
-        } else if (options.type === 'dblclick') {
-            snippet.extend(this, DoubleClick);
-        }
-        this.initialize(options);
-    }
-});
+            detect.onclick = function(e) {
+                e = e || window.event;
 
-module.exports = Reader;
-</code></pre>
+                info.x = e.pageX;
+                info.y = e.pageY;
+
+                if (gestureReader.isDoubleClick(info)) {
+                    type.innerHTML = 'Type : &lt;em>Double Click&lt;/em>';
+                } else {
+                    type.innerHTML = 'Type : &lt;em>Click&lt;/em>';
+                }
+            };
+
+        </pre></div>
+            <div id="example-html" class="hidden"><pre class="prettyprint source">
+            &lt;div id="detect">&lt;/div>
+            &lt;div class="box">
+                &lt;span id="type">Type : &lt;em>&lt;/em>&lt;/span>
+            &lt;/div>
+        </pre></div>
         </article>
-    </section>
+    
+</section>
 
 
+    <script>
+        var exampleResult = document.getElementById('example-result');
+        var exampleJs = document.getElementById('example-js');
+        var exampleHtml = document.getElementById('example-html');
+        var exampleResultBtn = document.getElementById('example-result-btn');
+        var exampleJsBtn = document.getElementById('example-js-btn');
+        var exampleHtmlBtn = document.getElementById('example-html-btn');
+
+        function setActive(el) {
+            el.className += ' active';
+        }
+
+        function setInactive(el) {
+            el.className = el.className.replace(/\s*active\s*/g, '');
+        }
+
+        function show(el) {
+            el.className = el.className.replace(/\s*hidden\s*/g, '');
+        }
+
+        function hide(el) {
+            el.className += ' hidden';
+        }
+
+        function showJs() {
+            hide(exampleHtml);
+            hide(exampleResult);
+            setInactive(exampleHtmlBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleJs);
+            setActive(exampleJsBtn);
+        }
+
+        function showHtml() {
+            hide(exampleJs);
+            hide(exampleResult);
+            setInactive(exampleJsBtn);
+            setInactive(exampleResultBtn);
+
+            show(exampleHtml);
+            setActive(exampleHtmlBtn);
+        }
+
+        function showResult() {
+            hide(exampleJs);
+            hide(exampleHtml);
+            setInactive(exampleJsBtn);
+            setInactive(exampleHtmlBtn);
+
+            show(exampleResult);
+            setActive(exampleResultBtn);
+        }
+    </script>
 
 
 </div>
@@ -122,13 +182,7 @@ module.exports = Reader;
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = '_sub'.replace(/"/g, '_');
-        var selectedApi = document.getElementById(id); // do not use jquery selector
-        var $selectedApi = $(selectedApi);
-
-        $selectedApi.removeClass('hidden');
-        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-        showLnbApi();
+        showLnbExamples();
     </script>
 
 </body>

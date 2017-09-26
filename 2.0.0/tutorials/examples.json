@@ -1,0 +1,17 @@
+{
+    "example01-basic": {
+        "title": "1. Basic"
+    },
+    "example02-dblclick": {
+        "title": "2. Using DoubleClick"
+    },
+    "example03-longtab": {
+        "title": "3. Using LongTab"
+    },
+    "example04-flick-mobile": {
+        "title": "4. Using Flicking (Mobile)"
+    },
+    "example05-longtab-mobile": {
+        "title": "5. Using LongTab (Mobile)"
+    }
+}
