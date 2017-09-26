@@ -1,25 +1,32 @@
 /**
- * @fileoverview discriminate flick event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
+ * @fileoverview Discriminate flick event
+ * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
  */
 
+'use strict';
+
+var snippet = require('tui-code-snippet');
+
 /**
- * Modules of Discrimination flick
+ * Modules of discrimination flick
  * @ignore
  */
 var Flick = /** @lends Flick */{
     /**
-     * time is considered flick.
+     * Time is considered flick.
      */
     flickTime: 100,
+
     /**
-     * width is considered flick.
+     * Width is considered flick.
      */
     flickRange: 300,
+
     /**
-     * width is considered moving.
+     * Width is considered moving.
      */
     minDist: 10,
+
     /**
      * Reader type
      */
@@ -27,23 +34,24 @@ var Flick = /** @lends Flick */{
 
     /**
      * Initialize Flicking
-     * @param {object} option Flick options
-     *  @param {number} [option.flickTime] Flick time, if in this time, do not check move distance
-     *  @param {number} [option.flickRange] Flick range, if not in time, compare move distance with flick ragne.
-     *  @param {number} [option.minDist] Minimum distance for check available movement.
+     * @param {object} options - Flick options
+     *     @param {number} [options.flickTime] - Flick time, if in this time, do not check move distance
+     *     @param {number} [options.flickRange] - Flick range, if not in time, compare move distance with flick ragne.
+     *     @param {number} [options.minDist] - Minimum distance for check available movement.
      */
-    initialize: function(option) {
-        this.flickTime = option.flickTime || this.flickTime;
-        this.flickRange = option.flickRange || this.flickRange;
-        this.minDist = option.minDist || this.minDist;
+    initialize: function(options) {
+        this.flickTime = options.flickTime || this.flickTime;
+        this.flickRange = options.flickRange || this.flickRange;
+        this.minDist = options.minDist || this.minDist;
     },
 
     /**
-     * pick event type from eventData
-     * @memberOf Reader#
-     * @param {object} eventData event Data
-     * @return {object}
-     * @example gestureReader.figure({
+     * Pick event type from eventData
+     * @memberof Reader#
+     * @param {object} eventData - Event data
+     * @returns {object} Info of direction and flicking state
+     * @example
+     * instance.figure({
      *      list : [{x: 0, y: 0}, {x: 100, y: 100}],
      *      start: 0,
      *      end: 50
@@ -55,40 +63,44 @@ var Flick = /** @lends Flick */{
      */
     figure: function(eventData) {
         return {
-            direction : this.getDirection(eventData.list),
+            direction: this.getDirection(eventData.list),
             isFlick: this.isFlick(eventData)
-        }
+        };
     },
 
     /**
-     * return direction figured out
-     * @memberOf Reader#
-     * @param {array} list eventPoint List
+     * Return direction figured out
+     * @memberof Reader#
+     * @param {array} list - eventPoint list
      * @returns {string}
-     * @example gestureReader.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
+     * @example
+     * instance.getDirection([{x: 0, y: 0}, {x: 100, y: 100}]);
      * => 'SE';
      */
     getDirection: function(list) {
-        var first = list[0],
-            final = list[list.length-1],
-            cardinalPoint = this.getCardinalPoints(first, final),
-            res = this.getCloseCardinal(first, final, cardinalPoint);
+        var first = list[0];
+        var final = list[list.length - 1];
+        var cardinalPoint = this.getCardinalPoints(first, final);
+        var res = this.getCloseCardinal(first, final, cardinalPoint);
 
         return res;
     },
+
     /**
-     * return cardinal points figured out
-     * @memberOf Reader#
-     * @param {object} first start point
-     * @param {object} last end point
-     * @example gestureReader.getDirection({x: 0, y: 0}, {x: 100, y: 100});
+     * Return cardinal points figured out
+     * @memberof Reader#
+     * @param {object} first - Start point
+     * @param {object} last - End point
+     * @returns {string} Direction info
+     * @example
+     * instance.getDirection({x: 0, y: 0}, {x: 100, y: 100});
      * => 'SE';
      */
     getCardinalPoints: function(first, last) {
-        var verticalDist = first.y - last.y,
-            horizonDist = first.x - last.x,
-            NS = '',
-            WE = '';
+        var verticalDist = first.y - last.y;
+        var horizonDist = first.x - last.x;
+        var NS = '';
+        var WE = '';
 
         if (verticalDist < 0) {
             NS = 'S';
@@ -102,39 +114,42 @@ var Flick = /** @lends Flick */{
             WE = 'W';
         }
 
-        return NS+WE;
+        return NS + WE;
     },
 
     /**
-     * return nearest four cardinal points
-     * @memberOf Reader#
-     * @param {object} first start point
-     * @param {object} last end point
-     * @param {string} cardinalPoint cardinalPoint from getCardinalPoints
+     * Return nearest four cardinal points
+     * @memberof Reader#
+     * @param {object} first - Start point
+     * @param {object} last - End point
+     * @param {string} cardinalPoint - CardinalPoint from getCardinalPoints
      * @returns {string}
-     * @example gestureReader.getDirection({x: 0, y: 50}, {x: 100, y: 100});
+     * @example
+     * instance.getDirection({x: 0, y: 50}, {x: 100, y: 100});
      * => 'W';
      */
     getCloseCardinal: function(first, last, cardinalPoint) {
-        var slop = (last.y - first.y) / (last.x - first.x),
-            direction;
+        var slop = (last.y - first.y) / (last.x - first.x);
+        var direction;
+
         if (slop < 0) {
             direction = slop < -1 ? 'NS' : 'WE';
         } else {
             direction = slop > 1 ? 'NS' : 'WE';
         }
 
-        direction = tui.util.getDuplicatedChar(direction, cardinalPoint);
+        direction = snippet.getDuplicatedChar(direction, cardinalPoint);
+
         return direction;
     },
 
     /**
-     * extract type of event
-     * @memberOf Reader#
-     * @param {object} eventData event data
+     * Extract type of event
+     * @memberof Reader#
+     * @param {object} eventData - Event data
      * @returns {string}
      * @example
-     * reader.isFlick({
+     * instance.isFlick({
      *      start: 1000,
      *      end: 1100,
      *      list: [
@@ -150,15 +165,15 @@ var Flick = /** @lends Flick */{
      * });
      */
     isFlick: function(eventData) {
-        var start = eventData.start,
-            end = eventData.end,
-            list = eventData.list,
-            first = list[0],
-            final = list[list.length - 1],
-            timeDist = end - start,
-            xDist = Math.abs(first.x - final.x),
-            yDist = Math.abs(first.y - final.y),
-            isFlick;
+        var start = eventData.start;
+        var end = eventData.end;
+        var list = eventData.list;
+        var first = list[0];
+        var final = list[list.length - 1];
+        var timeDist = end - start;
+        var xDist = Math.abs(first.x - final.x);
+        var yDist = Math.abs(first.y - final.y);
+        var isFlick;
 
         if (timeDist < this.flickTime || xDist > this.flickRange || yDist > this.flickRange) {
             isFlick = true;

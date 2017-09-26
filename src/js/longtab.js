@@ -1,59 +1,68 @@
 /**
- * @fileoverview discriminate long tab event
- * @author NHN entertainment FE dev team. Jein Yi<jein.yi@nhnent.com>
+ * @fileoverview Discriminate long tab event
+ * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
  */
 
+'use strict';
+
+var snippet = require('tui-code-snippet');
+
 /**
- * Modules of Discrimination longtab
+ * Modules of discrimination longtab
  * @ignore
  */
 var LongTab = /** @lends LongTab */{
     /**
-     * width is considered moving.
+     * Width is considered moving.
      */
     minDist: 10,
+
     /**
-     * tab timer for check double click
+     * Tab timer for check double click
      */
     tabTimer: null,
+
     /**
-     * extracted event type
+     * Extracted event type
      */
     type: 'longtab',
+
     /**
-     * long tab term
+     * Long tab term
      */
     longTabTerm: 600,
+
     /**
-     * set options
-     * @param {object} option
-     *      @param {number} [option.minDist] distance to check movement
-     *      @param {number} [option.longTabTerm] Term for checking longtab
+     * Set optionss
+     * @param {object} options - Longtab optionss
+     *      @param {number} [options.minDist] - Distance to check movement
+     *      @param {number} [options.longTabTerm] - Term for checking longtab
      */
-    initialize: function(option) {
-        this.minDist = option.flickTime || this.minDist;
-        this.longTabTerm = option.longTabTerm || this.longTabTerm;
+    initialize: function(options) {
+        this.minDist = options.flickTime || this.minDist;
+        this.longTabTerm = options.longTabTerm || this.longTabTerm;
     },
 
     /**
-     * Start detect longtab roop, If touchstop event does not fire and position are same, run callback
-     * @param {object} pos position to start
+     * Start detect longtab roop, if touchstop event does not fire and position are same, run callback
+     * @param {object} pos - Position to start
      */
     startTab: function(pos) {
         this.isLongtabed = false;
         this.longTabPos = pos;
-        this.tabTimer = window.setTimeout(tui.util.bind(function() {
+        this.tabTimer = window.setTimeout(snippet.bind(function() {
             this.isLongtabed = true;
         }, this), this.longTabTerm);
     },
 
     /**
      * Stop detect longtab roop.
-     * @memberOf Reader#
-     * @param {object} pos A position to end
-     * @param {function} callback A callback function
+     * @memberof Reader#
+     * @param {object} pos - A position to end
+     * @param {function} callback - A callback function
+     * @returns {boolean} State of longtab
      * @example
-     * gestureReader.isLongTab({
+     * instance.isLongTab({
      *      x: 100,
      *      y: 150
      * }, function() {
@@ -75,6 +84,7 @@ var LongTab = /** @lends LongTab */{
                 this.stopTab();
             }
         }
+
         return isLongtab;
     },
 
@@ -87,7 +97,7 @@ var LongTab = /** @lends LongTab */{
     },
 
     /**
-     * clear clickTimer
+     * Clear clickTimer
      */
     resetTimer: function() {
         window.clearTimeout(this.tabTimer);
