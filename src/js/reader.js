@@ -11,6 +11,8 @@ var Flick = require('./flick');
 var LongTab = require('./longtab');
 var DoubleClick = require('./doubleClick');
 
+var hostnameSent = false;
+
 /**
  * To find out it's flick or click or nothing from event datas.
  * @class Reader
@@ -22,6 +24,7 @@ var DoubleClick = require('./doubleClick');
  *     @param {number} [options.flickRange] - (Flick) If not in time, compare move distance with flick ragne.
  *     @param {number} [options.longTabTerm] - (LongTab) Term for checking longtab
  *     @param {number} [options.minDist] - (Flick, LongTab) Minimum distance for check available movement.
+ *     @param {boolean} [options.usageStatistics=true] - Let us know the hostname. If you don't want to send the hostname, please set to false.
  * @example
  * var GestureReader = tui.GestureReader; // or require('tui-gesture-reader');
  * var instance = new GestureReader({
@@ -30,6 +33,10 @@ var DoubleClick = require('./doubleClick');
  */
 var Reader = snippet.defineClass(/** @lends Reader.prototype */{
     init: function(options) {
+        options = snippet.extend({
+            usageStatistics: true
+        }, options);
+
         if (options.type === 'flick') {
             snippet.extend(this, Flick);
         } else if (options.type === 'longtab') {
@@ -38,7 +45,33 @@ var Reader = snippet.defineClass(/** @lends Reader.prototype */{
             snippet.extend(this, DoubleClick);
         }
         this.initialize(options);
+
+        if (options.usageStatistics) {
+            sendHostname();
+        }
     }
 });
+
+/**
+ * send hostname
+ * @ignore
+ */
+function sendHostname() {
+    var hostname = location.hostname;
+
+    if (hostnameSent) {
+        return;
+    }
+    hostnameSent = true;
+
+    snippet.imagePing('https://www.google-analytics.com/collect', {
+        v: 1,
+        t: 'event',
+        tid: 'UA-115377265-9',
+        cid: hostname,
+        dp: hostname,
+        dh: 'gesture-reader'
+    });
+}
 
 module.exports = Reader;
