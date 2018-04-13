@@ -1,6 +1,6 @@
 /*!
  * tui-gesture-reader.js
- * @version 2.0.0
+ * @version 2.1.0
  * @author NHNEnt FE Development Lab <dl_javascript@nhnent.com>
  * @license MIT
  */
@@ -73,6 +73,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var LongTab = __webpack_require__(3);
 	var DoubleClick = __webpack_require__(4);
 
+	var hostnameSent = false;
+
 	/**
 	 * To find out it's flick or click or nothing from event datas.
 	 * @class Reader
@@ -84,6 +86,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *     @param {number} [options.flickRange] - (Flick) If not in time, compare move distance with flick ragne.
 	 *     @param {number} [options.longTabTerm] - (LongTab) Term for checking longtab
 	 *     @param {number} [options.minDist] - (Flick, LongTab) Minimum distance for check available movement.
+	 *     @param {boolean} [options.usageStatistics=true] - Let us know the hostname. If you don't want to send the hostname, please set to false.
 	 * @example
 	 * var GestureReader = tui.GestureReader; // or require('tui-gesture-reader');
 	 * var instance = new GestureReader({
@@ -92,6 +95,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var Reader = snippet.defineClass(/** @lends Reader.prototype */{
 	    init: function(options) {
+	        options = snippet.extend({
+	            usageStatistics: true
+	        }, options);
+
 	        if (options.type === 'flick') {
 	            snippet.extend(this, Flick);
 	        } else if (options.type === 'longtab') {
@@ -100,8 +107,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	            snippet.extend(this, DoubleClick);
 	        }
 	        this.initialize(options);
+
+	        if (options.usageStatistics) {
+	            sendHostname();
+	        }
 	    }
 	});
+
+	/**
+	 * send hostname
+	 * @ignore
+	 */
+	function sendHostname() {
+	    var hostname = location.hostname;
+
+	    if (hostnameSent) {
+	        return;
+	    }
+	    hostnameSent = true;
+
+	    snippet.imagePing('https://www.google-analytics.com/collect', {
+	        v: 1,
+	        t: 'event',
+	        tid: 'UA-115377265-9',
+	        cid: hostname,
+	        dp: hostname,
+	        dh: 'gesture-reader'
+	    });
+	}
 
 	module.exports = Reader;
 
