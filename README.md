@@ -90,7 +90,7 @@ tui-gesture-reader/
 ├─ latest/
 │  ├─ tui-gesture-reader.js
 │  └─ tui-gesture-reader.min.js
-├─ v3.3.0/
+├─ v2.1.0/
 │  ├─ ...
 ```
 
