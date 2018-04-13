@@ -14,7 +14,7 @@
   "description": "TOAST UI Component: GestureReader",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhnent/tui.gesture-reader"
+    "url": "https://github.com/nhnent/tui.gesture-reader.git"
   },
   "keywords": [
     "nhnent",
