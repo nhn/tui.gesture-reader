@@ -35,13 +35,15 @@
 TOAST UI GestureReader applies Google Analytics (GA) to collect statistics on the use of open source, in order to identify how widely TOAST UI GestureReader is used throughout the world.
 It also serves as important index to determine the future course of projects.
 `location.hostname` (e.g. > “ui.toast.com") is to be collected and the sole purpose is nothing but to measure statistics on the usage.
- To disable GA, use the following `usageStatistics` option when creating the instance.
+
+To disable GA, use the following `usageStatistics` option when creating the instance.
 
 ```js
 var options = {
     ...
     usageStatistics: false
 }
+
 var instance = new GestureReader(options);
 ```
 
