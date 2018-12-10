@@ -57,21 +57,12 @@ var Reader = snippet.defineClass(/** @lends Reader.prototype */{
  * @ignore
  */
 function sendHostname() {
-    var hostname = location.hostname;
-
     if (hostnameSent) {
         return;
     }
     hostnameSent = true;
 
-    snippet.imagePing('https://www.google-analytics.com/collect', {
-        v: 1,
-        t: 'event',
-        tid: 'UA-115377265-9',
-        cid: hostname,
-        dp: hostname,
-        dh: 'gesture-reader'
-    });
+    snippet.sendHostname('gesture-reader', 'UA-129987462-1');
 }
 
 module.exports = Reader;
