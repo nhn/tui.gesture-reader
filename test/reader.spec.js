@@ -10,7 +10,7 @@ describe('GestureReader Option', function() {
         var reader; // eslint-disable-line no-unused-vars
 
         beforeEach(function() {
-            spyOn(snippet, 'imagePing');
+            spyOn(snippet, 'sendHostname');
         });
 
         xit('should send hostname by default', function() {
@@ -18,7 +18,7 @@ describe('GestureReader Option', function() {
                 type: 'dblclick'
             });
 
-            expect(snippet.imagePing).toHaveBeenCalled();
+            expect(snippet.sendHostname).toHaveBeenCalled();
         });
 
         xit('should not send hostname on usageStatistics option false', function() {
@@ -27,7 +27,7 @@ describe('GestureReader Option', function() {
                 usageStatistics: false
             });
 
-            expect(snippet.imagePing).not.toHaveBeenCalled();
+            expect(snippet.sendHostname).not.toHaveBeenCalled();
         });
     });
 });
