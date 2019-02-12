@@ -60,7 +60,7 @@ var instance = new GestureReader(options);
 
 
 ## 🐾 Examples
-* [Basic](https://nhnent.github.io/tui.gesture-reader/latest/tutorial-example01-basic.html) : Example of using default options.
+* [Basic](https://nhnent.github.io/tui.gesture-reader/latest/tutorial-example01-basic) : Example of using default options.
 
 More examples can be found on the left sidebar of each example page, and have fun with it.
 
@@ -140,10 +140,10 @@ var GestureReader = require('tui-gesture-reader'); /* CommonJS */
 ```
 
 ``` javascript
-import {GestureReader} from 'tui-gesture-reader'; /* ES6 */
+import GestureReader from 'tui-gesture-reader'; /* ES6 */
 ```
 
-You can create an instance with [options](https://nhnent.github.io/tui.gesture-reader/latest/Reader.html) and call various APIs after creating an instance.
+You can create an instance with [options](https://nhnent.github.io/tui.gesture-reader/latest/Reader) and call various APIs after creating an instance.
 
 ``` javascript
 var instance = new GestureReader({ ... });
@@ -151,7 +151,7 @@ var instance = new GestureReader({ ... });
 instance.isAvailableZone( ... );
 ```
 
-For more information about the API, please see [here](https://nhnent.github.io/tui.gesture-reader/latest/Reader.html).
+For more information about the API, please see [here](https://nhnent.github.io/tui.gesture-reader/latest/Reader).
 
 
 ## 🔧 Pull Request Steps
