@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <title>4. Using Flicking (Mobile)</title>
+        <link rel="stylesheet" type="text/css" href="./css/tui-example-style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/example.css" />
+    </head>
+
+    <body>
+        <div class="code-html">
+            <div id="detect">
+            </div>
+            <div class="box">
+                <span id="direction">Direction : <em></em></span>
+                <span id="type">Type : <em></em></span>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+        <script type="text/javascript" src="../dist/tui-gesture-reader.js"></script>
+        <script type="text/javascript" class="code-js">
+
+            var DIRECTION = {
+                W: 'WEST',
+                N: 'NORTH',
+                S: 'SOUTH',
+                E: 'EAST'
+            };
+
+            var detect = document.getElementById('detect');
+            var direction = document.getElementById('direction');
+            var type = document.getElementById('type');
+
+            var info = {};
+
+            var gestureReader = new tui.GestureReader({
+                type: 'flick',
+                flickRange: 100
+            });
+
+            detect.addEventListener('touchstart', function(e) {
+                e = e || window.event;
+
+                info.x = e.touches[0].clientX;
+                info.y = e.touches[0].clientY;
+
+                info.start = new Date();
+            }, false);
+
+            detect.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, false);
+
+            detect.addEventListener('touchend', function(e) {
+                var result;
+
+                e = e || window.event;
+
+                info.end = new Date();
+
+                result = gestureReader.figure({
+                    start: info.start,
+                    end: info.end,
+                    list : [{
+                        x: info.x,
+                        y: info.y
+                    }, {
+                        x: e.changedTouches[0].clientX,
+                        y: e.changedTouches[0].clientY
+                    }]
+                });
+
+                setTimeout(function() {
+                    if (result.isFlick) {
+                        type.getElementsByTagName('em')[0].innerHTML = 'flick';
+                    } else {
+                        type.getElementsByTagName('em')[0].innerHTML = 'not flick';
+                    }
+
+                    if (result.direction) {
+                        direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
+                    }
+                }, 300);
+            }, false);
+
+        </script>
+    </body>
+</html>

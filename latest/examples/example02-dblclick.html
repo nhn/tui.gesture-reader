@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>2. Using DoubleClick</title>
+        <link rel="stylesheet" type="text/css" href="./css/tui-example-style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/example.css" />
+    </head>
+
+    <body>
+        <div class="code-html">
+            <div id="detect"></div>
+            <div class="box">
+                <span id="type">Type : <em></em></span>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+        <script type="text/javascript" src="../dist/tui-gesture-reader.js"></script>
+        <script type="text/javascript" class="code-js">
+
+            var detect = document.getElementById('detect');
+            var direction = document.getElementById('direction');
+            var type = document.getElementById('type');
+
+            var info = {};
+
+            var gestureReader = new tui.GestureReader({
+                type: 'dblclick',
+                clickTerm: 600
+            });
+
+            detect.onclick = function(e) {
+                e = e || window.event;
+
+                info.x = e.pageX;
+                info.y = e.pageY;
+
+                if (gestureReader.isDoubleClick(info)) {
+                    type.innerHTML = 'Type : <em>Double Click</em>';
+                } else {
+                    type.innerHTML = 'Type : <em>Click</em>';
+                }
+            };
+
+        </script>
+    </body>
+</html>
