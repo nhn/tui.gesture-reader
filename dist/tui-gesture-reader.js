@@ -1,7 +1,7 @@
 /*!
  * tui-gesture-reader.js
- * @version 2.1.2
- * @author NHNEnt FE Development Lab <dl_javascript@nhnent.com>
+ * @version 2.1.3
+ * @author NHN FE Development Lab <dl_javascript@nhn.com>
  * @license MIT
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62,7 +62,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * @fileoverview Discriminate type of touch event
-	 * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
+	 * @author NHN. FE dev Lab. <dl_javascript@nhn.com>
 	 */
 
 	'use strict';
@@ -142,7 +142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * @fileoverview Discriminate flick event
-	 * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
+	 * @author NHN. FE dev Lab. <dl_javascript@nhn.com>
 	 */
 
 	'use strict';
@@ -336,7 +336,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * @fileoverview Discriminate long tab event
-	 * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
+	 * @author NHN. FE dev Lab. <dl_javascript@nhn.com>
 	 */
 
 	'use strict';
@@ -450,7 +450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * @fileoverview Discriminate doubleclick event
-	 * @author NHN Ent. FE dev Lab. <dl_javascript@nhnent.com>
+	 * @author NHN. FE dev Lab. <dl_javascript@nhn.com>
 	 */
 
 	'use strict';
