@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>1. Basic</title>
+        <link rel="stylesheet" type="text/css" href="./css/tui-example-style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/example.css" />
+    </head>
+
+    <body>
+        <div class="code-html">
+            <div id="detect"></div>
+            <div class="box">
+                <span id="direction">Direction : <em></em></span>
+                <span id="type">Type : <em></em></span>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/v1.5.0/tui-code-snippet.min.js"></script>
+        <script type="text/javascript" src="../dist/tui-gesture-reader.js"></script>
+        <script type="text/javascript" class="code-js">
+
+            var DIRECTION = {
+                W: 'WEST',
+                N: 'NORTH',
+                S: 'SOUTH',
+                E: 'EAST'
+            };
+
+            var detect = document.getElementById('detect');
+            var direction = document.getElementById('direction');
+            var type = document.getElementById('type');
+
+            var info = {};
+
+            var gestureReader = new tui.GestureReader({
+                type: 'flick',
+                flickRange: 100
+            });
+
+            detect.onmousedown = function(e) {
+                e = e || window.event;
+
+                info.x = e.pageX;
+                info.y = e.pageY;
+
+                info.start = new Date();
+            };
+
+            detect.onmouseup = function(e) {
+                e = e || window.event;
+
+                info.end = new Date();
+
+                var result = gestureReader.figure({
+                    start: info.start,
+                    end: info.end,
+                    list : [{
+                        x: info.x,
+                        y: info.y
+                    }, {
+                        x: e.pageX,
+                        y: e.pageY
+                    }]
+                });
+
+                setTimeout(function() {
+                    if (result.isFlick) {
+                        type.getElementsByTagName('em')[0].innerHTML = 'flick';
+                    } else {
+                        type.getElementsByTagName('em')[0].innerHTML = 'not flick';
+                    }
+                    if (result.direction) {
+                        direction.getElementsByTagName('em')[0].innerHTML = DIRECTION[result.direction];
+                    }
+                }, 300);
+            };
+
+        </script>
+    </body>
+</html>
