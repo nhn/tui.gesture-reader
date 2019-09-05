@@ -1,3 +1,5 @@
+#### ‼️ There are no major updates planned for `tui.gesture-reader` in the future. It will only get bug fixes.
+
 # TOAST UI Component : Gesture Reader
 > Component that distinguishes the gesture type and the direction.
 
